@@ -7,13 +7,18 @@ type Character = {
   portraitDescription: string;
 };
 
-type king = Character & {
+type King = Character & {
   yearsOfReign: number;
   phrase: "You are all going to die";
 };
 
-type figther = Character & {
+type Fighter = Character & {
   weapon: string;
   dexterity: number;
   phrase: "First I punch, then I ask";
+};
+
+type Adviser = Character & {
+  advisesTo: King | Fighter | Adviser;
+  phrase: "I don't know why, but I think I'm going to die soon";
 };
