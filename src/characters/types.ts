@@ -11,3 +11,9 @@ type king = Character & {
   yearsOfReign: number;
   phrase: "You are all going to die";
 };
+
+type figther = Character & {
+  weapon: string;
+  dexterity: number;
+  phrase: "First I punch, them I ask";
+};
