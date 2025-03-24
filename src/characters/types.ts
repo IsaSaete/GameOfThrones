@@ -15,5 +15,5 @@ type king = Character & {
 type figther = Character & {
   weapon: string;
   dexterity: number;
-  phrase: "First I punch, them I ask";
+  phrase: "First I punch, then I ask";
 };
