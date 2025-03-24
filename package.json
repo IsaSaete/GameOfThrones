@@ -1,0 +1,19 @@
+{
+  "name": "game-of-thrones",
+  "version": "1.0.0",
+  "main": "js/index.js",
+  "scripts": {
+    "start": "serve public",
+    "build": "tsc",
+    "build:dev": "tsc --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "type": "module",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "typescript": "^5.8.2",
+    "serve": "^14.2.4"
+  }
+}
