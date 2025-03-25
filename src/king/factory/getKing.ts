@@ -1,5 +1,5 @@
-import { Character } from "../../character/type";
-import { King } from "../type";
+import { Character } from "../../character/type.js";
+import { King } from "../type.js";
 
 export const getKing = (character: Character, yearsOfReign: number): King => {
   const king: King = {
