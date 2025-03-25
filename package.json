@@ -8,9 +8,6 @@
     "build:dev": "tsc --watch",
     "prepare": "husky",
     "test": "jest",
-    "test:dev": "jest --watchAll",
-    "prepare": "husky",
-    "test": "jest",
     "test:dev": "jest --watchAll"
   },
   "keywords": [],
@@ -28,7 +25,6 @@
     "husky": "^9.1.7",
     "jest-environment-jsdom": "^29.7.0",
     "jsdom": "^26.0.0",
-    "lint-staged": "^15.5.0",
     "prettier": "3.5.3",
     "serve": "^14.2.4",
     "ts-jest": "^29.3.0",
