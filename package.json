@@ -9,6 +9,9 @@
     "prepare": "husky",
     "test": "jest",
     "test:dev": "jest --watchAll"
+    "prepare": "husky",
+    "test": "jest",
+    "test:dev": "jest --watchAll"
   },
   "keywords": [],
   "author": "",
