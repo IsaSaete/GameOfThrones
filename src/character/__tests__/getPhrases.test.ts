@@ -1,10 +1,14 @@
 import { getPhrases } from "../getPhrases";
+import { King } from "../../king/type";
+import { Fighter } from "../../fighter/type";
+import { Adviser } from "../../adviser/type";
+import { Squire } from "../../squire/type";
 import {
   joffreyBaratheon,
   tyrionLannister,
   daenerysTargaryen,
   bronnBlackwater,
-} from "../data";
+} from "../../character/data";
 
 describe("Given the getCharacterPhrases funtion", () => {
   describe("When it receives 3 Joffrey Baratheons", () => {
@@ -38,7 +42,7 @@ describe("Given the getCharacterPhrases funtion", () => {
   });
 
   describe("When it receives Joffrey Baratheon, Bronn Blackwater, Daenerys Targaryen, and Tyrion Lannister", () => {
-    const theseCharacters = [
+    const theseCharacters: (King | Fighter | Adviser | Squire)[] = [
       joffreyBaratheon,
       bronnBlackwater,
       daenerysTargaryen,

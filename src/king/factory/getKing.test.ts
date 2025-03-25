@@ -1,4 +1,4 @@
-import { Character } from "../../characters/types";
+import { Character } from "../../character/type";
 import { getKing } from "./getKing";
 
 describe("Given the getKing function", () => {

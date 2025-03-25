@@ -1,3 +1,8 @@
+import { King } from "../king/type";
+import { Squire } from "../squire/type";
+import { Fighter } from "../fighter/type";
+import { Adviser } from "../adviser/type";
+
 const joffreyBaratheon: King = {
   name: "Joffrey",
   lastName: "Baratheon",
