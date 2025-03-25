@@ -19,12 +19,12 @@ type Fighter = Character & {
 };
 
 type Adviser = Character & {
-  advisesTo: string;
+  advisesTo: Fighter | King | Adviser;
   phrase: "I don't know why, but I think I'm going to die soon";
 };
 
 type Squire = Character & {
-  servesTo: string;
+  servesTo: Fighter;
   ballism: number;
   phrase: "I'm a loser";
 };
