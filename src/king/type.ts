@@ -1,4 +1,4 @@
-import { Character } from "../characters/types";
+import { Character } from "../character/type";
 
 export type King = Character & {
   yearsOfReign: number;

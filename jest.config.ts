@@ -1,10 +1,11 @@
 import { createDefaultPreset, JestConfigWithTsJest } from "ts-jest";
 
-const config: JestConfigWithTsJest = {
+const jestConfig: JestConfigWithTsJest = {
   rootDir: "src",
+  resolver: "ts-jest-resolver",
   verbose: true,
   testEnvironment: "jsdom",
   ...createDefaultPreset(),
 };
 
-export default config;
+export default jestConfig;
