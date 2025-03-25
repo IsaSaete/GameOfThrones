@@ -1,4 +1,4 @@
-import { Character } from "../../characters/types";
+import { Character } from "../../character/type";
 import { King } from "../type";
 
 export const getKing = (character: Character, yearsOfReign: number): King => {
