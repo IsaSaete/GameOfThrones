@@ -1,4 +1,4 @@
-import { Character } from "../src/character/type";
+import { Character } from "../character/type";
 
 export type Squire = Character & {
   servesTo: string;
