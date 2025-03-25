@@ -1,0 +1,7 @@
+import { Character } from "../src/character/type";
+
+export type Squire = Character & {
+  servesTo: string;
+  ballism: number;
+  phrase: "I'm a loser";
+};
