@@ -14,18 +14,45 @@ body {
 
 .main-content {
   margin: 0;
-  padding: 0px 30px 30px 30px;
+  padding: 3cqb 30px 30px 30px;
   display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
   justify-content: center;
 }
 
 .main-header {
-  padding: 30px;
+  display: flex;
+  justify-content: center;
 }
 
 .main-title {
-  margin: 0;
   font-family: "EB Garamond", serif;
   font-weight: 600;
   font-size: 2.8rem;
+}
+
+.character-card {
+  box-shadow: 2px 2px 7px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 5px;
+  width: 350px;
+  height: 410px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.character-info {
+  background-color: #331c0e;
+  height: 160px;
+  width: 100%;
+  padding: 30px 20px 20px 20px;
+  border-radius: 0px 0px 5px 5px;
+}
+
+.character-name {
+  font-weight: 400;
+  color: #fff;
+  padding: 0px;
+  margin: 0;
 }
