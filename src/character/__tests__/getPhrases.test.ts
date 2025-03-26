@@ -2,7 +2,7 @@ import { getPhrases } from "../getPhrases";
 import { King } from "../../king/type";
 import { Fighter } from "../../fighter/type";
 import { Adviser } from "../../adviser/type";
-import { Squire } from "../../squire/type";
+import { Squire } from "../../squire/types";
 import {
   joffreyBaratheon,
   tyrionLannister,

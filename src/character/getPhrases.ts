@@ -1,7 +1,7 @@
 import { Adviser } from "../adviser/type";
 import { Fighter } from "../fighter/type";
 import { King } from "../king/type";
-import { Squire } from "../squire/type";
+import { Squire } from "../squire/types";
 
 export const getPhrases = (
   characters: (King | Fighter | Adviser | Squire)[],
