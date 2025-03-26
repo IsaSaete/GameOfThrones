@@ -1,6 +1,6 @@
 import { King } from "../king/type";
 import { Squire } from "../squire/type";
-import { Fighter } from "../fighter/type";
+import { Fighter } from "../fighter/types";
 import { Adviser } from "../adviser/type";
 
 const joffreyBaratheon: King = {
