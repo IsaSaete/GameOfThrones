@@ -1,5 +1,5 @@
-import { daenerysTargaryen } from "../character/data";
 import { Character } from "../character/type";
+import { Fighter } from "../fighter/type";
 import getSquire from "./getSquire";
 
 describe("Given the getSquire function", () => {
@@ -13,12 +13,22 @@ describe("Given the getSquire function", () => {
       portraitDescription: "",
     };
     const ballism = 5;
-    const fighter = daenerysTargaryen;
+    const lebronJames: Fighter = {
+      name: "LeBron",
+      lastName: "James",
+      age: 40,
+      isAlive: true,
+      portraitUrl: "",
+      portraitDescription: "",
+      dexterity: 10,
+      weapon: "Basketball",
+      phrase: "First I punch, then I ask",
+    };
 
     test("Then it should return squire with name 'Michael'", () => {
       const expectedCompleteName = "Michael Olowokandi";
 
-      const squire = getSquire(characterData, ballism, fighter);
+      const squire = getSquire(characterData, ballism, lebronJames);
       const squireCompleteName = `${squire.name} ${squire.lastName}`;
 
       expect(squireCompleteName).toBe(expectedCompleteName);
@@ -27,15 +37,15 @@ describe("Given the getSquire function", () => {
     test("Then it should return squire with ballism 5", () => {
       const expectedBallism = 5;
 
-      const squire = getSquire(characterData, ballism, fighter);
+      const squire = getSquire(characterData, ballism, lebronJames);
 
       expect(squire.ballism).toBe(expectedBallism);
     });
 
     test("Then it should return squire that serves to Daenerys Targaryen", () => {
-      const expectedServesTo = daenerysTargaryen;
+      const expectedServesTo = lebronJames;
 
-      const squire = getSquire(characterData, ballism, fighter);
+      const squire = getSquire(characterData, ballism, lebronJames);
 
       expect(squire.servesTo).toStrictEqual(expectedServesTo);
     });
@@ -43,7 +53,7 @@ describe("Given the getSquire function", () => {
     test("Then it should return squire that says 'I'm a loser'", () => {
       const expectedPhrase = "I'm a loser";
 
-      const squire = getSquire(characterData, ballism, fighter);
+      const squire = getSquire(characterData, ballism, lebronJames);
 
       expect(squire.phrase).toBe(expectedPhrase);
     });
