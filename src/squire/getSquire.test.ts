@@ -3,7 +3,7 @@ import { Fighter } from "../fighter/type";
 import getSquire from "./getSquire";
 
 describe("Given the getSquire function", () => {
-  describe("When it receives Michael Olowokandi character, 5 ballism, and Daenerys Targaryen", () => {
+  describe("When it receives Michael Olowokandi character, 5 ballism, and LeBron James", () => {
     const characterData: Character = {
       name: "Michael",
       lastName: "Olowokandi",
@@ -42,7 +42,7 @@ describe("Given the getSquire function", () => {
       expect(squire.ballism).toBe(expectedBallism);
     });
 
-    test("Then it should return squire that serves to Daenerys Targaryen", () => {
+    test("Then it should return squire that serves to LeBron James", () => {
       const expectedServesTo = lebronJames;
 
       const squire = getSquire(characterData, ballism, lebronJames);
