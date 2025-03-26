@@ -9,7 +9,7 @@ body {
 }
 
 .root {
-margin: 0;
+  margin: 0;
 }
 
 .main-content {
@@ -29,5 +29,3 @@ margin: 0;
   font-weight: 600;
   font-size: 2.8rem;
 }
-
-

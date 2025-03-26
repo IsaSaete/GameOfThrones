@@ -8,5 +8,5 @@ export const getApp = (): HTMLElement => {
 
   App.appendChild(Header);
 
-  return App
+  return App;
 };

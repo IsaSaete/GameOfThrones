@@ -1,5 +1,5 @@
 import { King } from "../king/type";
-import { Squire } from "../squire/type";
+import { Squire } from "../squire/types";
 import { Fighter } from "../fighter/types";
 import { Adviser } from "../adviser/type";
 
