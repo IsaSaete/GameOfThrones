@@ -15,7 +15,7 @@ describe("Given the getSquire function", () => {
     const ballism = 5;
     const fighter = daenerysTargaryen;
 
-    test("Then it should return squire with name 'MIchael'", () => {
+    test("Then it should return squire with name 'Michael'", () => {
       const expectedCompleteName = "Michael Olowokandi";
 
       const squire = getSquire(characterData, ballism, fighter);
