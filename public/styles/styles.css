@@ -14,11 +14,10 @@ body {
 
 .main-content {
   margin: 0;
-  padding: 3cqb 30px 30px 30px;
+  padding: 0px 30px 30px 30px;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  align-content: center;
+  align-items: center;
   justify-content: center;
 }
 
@@ -34,7 +33,7 @@ body {
 }
 
 .character-card {
-  box-shadow: 2px 2px 7px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 2px 2px 7px #000;
   border-radius: 5px;
   width: 350px;
   height: 410px;
