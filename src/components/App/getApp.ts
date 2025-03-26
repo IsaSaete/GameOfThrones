@@ -1,15 +1,12 @@
 import { getHeader } from "../Header/getHeader.js";
 
 export const getApp = (): HTMLElement => {
-  const mainContainer = document.createElement("div");
+  const App = document.createElement("div");
+  App.classList.add("main-content");
 
   const Header = getHeader();
 
-  if (!mainContainer) {
-    throw new Error("Main container is missing");
-  }
+  App.appendChild(Header);
 
-  const appElement = mainContainer.appendChild(Header);
-
-  return appElement;
+  return App;
 };

@@ -1,5 +1,5 @@
 import { Character } from "../character/type";
-import { Fighter } from "../fighter/type";
+import { Fighter } from "../fighter/types";
 import getSquire from "./getSquire";
 
 describe("Given the getSquire function", () => {

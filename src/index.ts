@@ -1,4 +1,4 @@
-import { getApp } from "./App/getApp.js";
+import { getApp } from "./components/App/getApp.js";
 
 const rootElement = document.querySelector(".root");
 

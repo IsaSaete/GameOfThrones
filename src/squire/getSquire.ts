@@ -1,5 +1,5 @@
 import { Character } from "../character/type";
-import { Fighter } from "../fighter/type";
+import { Fighter } from "../fighter/types";
 import { Range, Squire } from "./types";
 
 const getSquire = (

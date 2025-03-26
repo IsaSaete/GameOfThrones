@@ -1,6 +1,6 @@
 import { getPhrases } from "../getPhrases";
 import { King } from "../../king/type";
-import { Fighter } from "../../fighter/type";
+import { Fighter } from "../../fighter/types";
 import { Adviser } from "../../adviser/type";
 import { Squire } from "../../squire/types";
 import {
