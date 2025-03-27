@@ -1,4 +1,4 @@
-import getCharacter from "../character/factory/getCharacter";
+import getCharacter from "../character/factory/getCharacter.js";
 import { CharacterCommonData } from "../character/types";
 import { Fighter } from "../fighter/types";
 import { BallismRange, Squire } from "./types";

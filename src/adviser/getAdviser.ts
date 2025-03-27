@@ -1,4 +1,4 @@
-import getCharacter from "../character/factory/getCharacter";
+import getCharacter from "../character/factory/getCharacter.js";
 import { Character, CharacterCommonData } from "../character/types";
 import { Adviser } from "./type";
 
