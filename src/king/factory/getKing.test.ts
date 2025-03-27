@@ -1,8 +1,9 @@
+import { CharacterCommonData } from "../../character/types";
 import { getKing } from "./getKing";
 
 describe("Given the getKing function", () => {
   describe("When it receives Felipe IV character and 19 years of reign", () => {
-    const felipeIV = {
+    const felipeIV: CharacterCommonData = {
       name: "Felipe",
       lastName: "IV",
       age: 60,
