@@ -1,5 +1,5 @@
-import killCharacter from "../killCharacter";
-import makeCharacterSpeak from "../makeCharacterSpeak";
+import killCharacter from "../killCharacter.js";
+import makeCharacterSpeak from "../makeCharacterSpeak.js";
 import { Character, Portrait } from "../types";
 
 const getCharacter = (
