@@ -1,17 +1,13 @@
-import { Character } from "../../character/type";
 import { getKing } from "./getKing";
+import getCharacter from "../../character/factory/getCharacter";
 
 describe("Given the getKing function", () => {
   describe("When it receives Felipe IV character and 19 years of reign", () => {
+    const felipeIV = getCharacter("Felipe", "IV", 60, {
+      url: "",
+      description: "",
+    });
     const yearsOfReign = 19;
-    const felipeIV: Character = {
-      name: "Felipe",
-      lastName: "IV",
-      age: 60,
-      isAlive: false,
-      portraitUrl: "",
-      portraitDescription: "",
-    };
 
     test("Then it should return a king with name 'Felipe'", () => {
       const expectedName = "Felipe";

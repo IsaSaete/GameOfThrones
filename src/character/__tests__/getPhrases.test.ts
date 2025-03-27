@@ -1,14 +1,12 @@
 import { getPhrases } from "../getPhrases";
-import { King } from "../../king/type";
-import { Fighter } from "../../fighter/types";
-import { Adviser } from "../../adviser/type";
-import { Squire } from "../../squire/types";
+import { King } from "../../king/types";
+import { CharacterType } from "../../shared/types";
 import {
   joffreyBaratheon,
   tyrionLannister,
   daenerysTargaryen,
   bronnBlackwater,
-} from "../../character/data";
+} from "../data";
 
 describe("Given the getCharacterPhrases funtion", () => {
   describe("When it receives 3 Joffrey Baratheons", () => {
@@ -17,8 +15,14 @@ describe("Given the getCharacterPhrases funtion", () => {
       lastName: "Baratheon",
       age: 14,
       isAlive: false,
-      portraitUrl: "/images/portrait/Joffrey_Baratheon.webp",
-      portraitDescription: "Portrait of Joffrey Baratheon",
+      portrait: {
+        url: "/images/portrait/Joffrey_Baratheon.webp",
+        description: "Portrait of Joffrey Baratheon",
+      },
+      actions: {
+        kill: false,
+        speak: false,
+      },
       yearsOfReign: 5,
       phrase: "You are all going to die",
     });
@@ -42,7 +46,7 @@ describe("Given the getCharacterPhrases funtion", () => {
   });
 
   describe("When it receives Joffrey Baratheon, Bronn Blackwater, Daenerys Targaryen, and Tyrion Lannister", () => {
-    const theseCharacters: (King | Fighter | Adviser | Squire)[] = [
+    const theseCharacters: CharacterType[] = [
       joffreyBaratheon,
       bronnBlackwater,
       daenerysTargaryen,

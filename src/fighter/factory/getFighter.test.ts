@@ -1,18 +1,14 @@
 import { getFighter } from "./getFighter";
-import { Character } from "../../character/type";
+import getCharacter from "../../character/factory/getCharacter";
 
 describe("Given the getFighter function", () => {
   describe("When it recives Jon Snow character, the Longclaw weapon and a number 8 dexterity", () => {
+    const jonSnow = getCharacter("Jon", "Snow", 17, {
+      url: "",
+      description: "",
+    });
     const weapon = "Longclaw";
     const dexterity = 8;
-    const jonSnow: Character = {
-      name: "Jon",
-      lastName: "Snow",
-      age: 17,
-      isAlive: true,
-      portraitUrl: "",
-      portraitDescription: "",
-    };
 
     test("Then it should return a fighting character with the name 'Jon'.", () => {
       const expectedName = "Jon";

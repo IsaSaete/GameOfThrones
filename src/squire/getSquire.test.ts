@@ -1,29 +1,14 @@
-import { Character } from "../character/type";
-import { Fighter } from "../fighter/types";
+import getCharacter from "../character/factory/getCharacter";
 import getSquire from "./getSquire";
+import { lebronJames } from "../shared/fixtures";
 
 describe("Given the getSquire function", () => {
   describe("When it receives Michael Olowokandi character, 5 ballism, and LeBron James", () => {
-    const characterData: Character = {
-      name: "Michael",
-      lastName: "Olowokandi",
-      age: 2,
-      isAlive: true,
-      portraitUrl: "",
-      portraitDescription: "",
-    };
+    const characterData = getCharacter("Michael", "Olowokandi", 2, {
+      url: "",
+      description: "",
+    });
     const ballism = 5;
-    const lebronJames: Fighter = {
-      name: "LeBron",
-      lastName: "James",
-      age: 40,
-      isAlive: true,
-      portraitUrl: "",
-      portraitDescription: "",
-      dexterity: 10,
-      weapon: "Basketball",
-      phrase: "First I punch, then I ask",
-    };
 
     test("Then it should return squire with name 'Michael'", () => {
       const expectedCompleteName = "Michael Olowokandi";
