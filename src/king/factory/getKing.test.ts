@@ -1,12 +1,17 @@
-import { getKing } from "./getKing";
-import getCharacter from "../../character/factory/getCharacter";
+import { CharacterCommonData } from "../../character/types";
+import getKing from "./getKing.js";
 
 describe("Given the getKing function", () => {
   describe("When it receives Felipe IV character and 19 years of reign", () => {
-    const felipeIV = getCharacter("Felipe", "IV", 60, {
-      url: "",
-      description: "",
-    });
+    const felipeIV: CharacterCommonData = {
+      name: "Felipe",
+      lastName: "IV",
+      age: 60,
+      portrait: {
+        url: "",
+        description: "",
+      },
+    };
     const yearsOfReign = 19;
 
     test("Then it should return a king with name 'Felipe'", () => {
@@ -40,7 +45,7 @@ describe("Given the getKing function", () => {
       const expectedPhrase = "You are all going to die";
 
       const king = getKing(felipeIV, yearsOfReign);
-      const actualPhrase = king.phrase;
+      const actualPhrase = king.speak();
 
       expect(actualPhrase).toBe(expectedPhrase);
     });

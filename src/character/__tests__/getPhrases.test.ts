@@ -1,68 +1,50 @@
 import { getPhrases } from "../getPhrases";
 import { King } from "../../king/types";
-import { Fighter } from "../../fighter/types";
-import { Adviser } from "../../adviser/type";
-import { Squire } from "../../squire/types";
-import {
-  mariaSarmiento,
-  carbassot,
-  paquitoChocolatero,
-  bradPitt,
-} from "../fixtures";
-import killCharacter from "../killCharacter";
-import makeCharacterSpeak from "../makeCharacterSpeak";
+import getKing from "../../king/factory/getKing";
+import { mariaSarmiento } from "../../king/fixtures";
+import { carbassot } from "../../fighter/fixtures";
+import { bradPitt } from "../../squire/fixtures";
+import { paquitoChocolatero } from "../../adviser/fixtures";
 
 describe("Given the getPhrases funtion", () => {
   describe("When it receives 3 Maria Sarmiento", () => {
     const kingCharacters: King[] = [
-      {
-        name: "María",
-        lastName: "Sarmiento",
-        age: 50,
-        isAlive: false,
-        portrait: {
-          url: "/images/portrait/Joffrey_Baratheon.webp",
-          description: "Portrait of Joffrey Baratheon",
+      getKing(
+        {
+          name: "María",
+          lastName: "Sarmiento",
+          age: 50,
+          portrait: {
+            url: "/images/portrait/Joffrey_Baratheon.webp",
+            description: "Portrait of Joffrey Baratheon",
+          },
         },
-        actions: {
-          kill: killCharacter,
-          speak: makeCharacterSpeak,
+        5,
+      ),
+      getKing(
+        {
+          name: "María",
+          lastName: "Sarmiento",
+          age: 50,
+          portrait: {
+            url: "/images/portrait/Joffrey_Baratheon.webp",
+            description: "Portrait of Joffrey Baratheon",
+          },
         },
-        yearsOfReign: 5,
-        phrase: "You are all going to die",
-      },
-      {
-        name: "María",
-        lastName: "Sarmiento",
-        age: 50,
-        isAlive: false,
-        portrait: {
-          url: "/images/portrait/Joffrey_Baratheon.webp",
-          description: "Portrait of Joffrey Baratheon",
+        5,
+      ),
+      getKing(
+        {
+          name: "María",
+          lastName: "Sarmiento",
+          age: 50,
+          portrait: {
+            url: "/images/portrait/Joffrey_Baratheon.webp",
+            description: "Portrait of Joffrey Baratheon",
+          },
         },
-        actions: {
-          kill: killCharacter,
-          speak: makeCharacterSpeak,
-        },
-        yearsOfReign: 2,
-        phrase: "You are all going to die",
-      },
-      {
-        name: "María",
-        lastName: "Sarmiento",
-        age: 50,
-        isAlive: false,
-        portrait: {
-          url: "/images/portrait/Joffrey_Baratheon.webp",
-          description: "Portrait of Joffrey Baratheon",
-        },
-        actions: {
-          kill: killCharacter,
-          speak: makeCharacterSpeak,
-        },
-        yearsOfReign: 2,
-        phrase: "You are all going to die",
-      },
+        5,
+      ),
     ];
 
     test("Then it should return 3 phrases", () => {
@@ -84,7 +66,7 @@ describe("Given the getPhrases funtion", () => {
   });
 
   describe("When it receives María Sarmiento, Carbassot Carbassa, Paquito Chocolatero and Brad Pitt", () => {
-    const characters: (King | Fighter | Adviser | Squire)[] = [
+    const characters = [
       mariaSarmiento,
       carbassot,
       paquitoChocolatero,

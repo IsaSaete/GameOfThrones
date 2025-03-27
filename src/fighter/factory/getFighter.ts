@@ -1,23 +1,22 @@
-import { Character } from "../../character/types.js";
-import { Fighter } from "../types.js";
-import { NumberRange } from "../../shared/types.js";
+import getCharacter from "../../character/factory/getCharacter.js";
+import { CharacterCommonData } from "../../character/types.js";
+import { DexterityRange, Fighter } from "../types.js";
 
-export const getFighter = (
-  characterData: Character,
+const getFighter = (
+  characterCommonData: CharacterCommonData,
   weapon: string,
-  dexterity: NumberRange,
+  dexterity: DexterityRange,
 ): Fighter => {
+  const commonData = getCharacter(characterCommonData);
+
   const fighter: Fighter = {
-    name: characterData.name,
-    lastName: characterData.lastName,
-    age: characterData.age,
-    isAlive: characterData.isAlive,
-    portrait: characterData.portrait,
-    actions: characterData.actions,
+    ...commonData,
     weapon,
     dexterity,
-    phrase: "First I punch, then I ask",
+    speak: () => "First I punch, then I ask",
   };
 
   return fighter;
 };
+
+export default getFighter;

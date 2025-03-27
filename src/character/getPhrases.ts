@@ -1,5 +1,5 @@
-import { CharacterType } from "../shared/types";
+import { Character } from "./types";
 
-export const getPhrases = (characters: CharacterType[]): string[] => {
-  return characters.map((character) => character.phrase);
+export const getPhrases = (characters: Character[]): string[] => {
+  return characters.map((character) => character.speak());
 };

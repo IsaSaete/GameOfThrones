@@ -1,20 +1,22 @@
-import { Character } from "../../character/types.js";
+import getCharacter from "../../character/factory/getCharacter.js";
+import { CharacterCommonData } from "../../character/types.js";
 import { King } from "../types.js";
 
-export const getKing = (
-  characterData: Character,
+const getKing = (
+  characterCommonData: CharacterCommonData,
   yearsOfReign: number,
 ): King => {
+  const commonData = getCharacter(characterCommonData);
+
   const king: King = {
-    name: characterData.name,
-    lastName: characterData.lastName,
-    age: characterData.age,
-    isAlive: characterData.isAlive,
-    portrait: characterData.portrait,
-    actions: characterData.actions,
+    ...commonData,
     yearsOfReign,
-    phrase: "You are all going to die",
+    speak() {
+      return "You are all going to die";
+    },
   };
 
   return king;
 };
+
+export default getKing;

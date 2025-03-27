@@ -1,18 +1,13 @@
-import getCharacter from "../../character/factory/getCharacter";
-import getCharacterCard from "./getCharacterCard";
+import { mariaSarmiento } from "../../king/fixtures";
+import getCharacterCard from "./getCharacterCard.js";
 
 describe("Given a CharacterCard componen", () => {
-  describe("When it recives a 'Monica del Raval'", () => {
+  describe("When it recives a 'María Sarmiento'", () => {
     test("Then it should show a character's name inside a heading", () => {
       const screen = document.createElement("div");
-      const expectedCharacterName = "Mónica del Raval";
+      const expectedCharacterName = "María Sarmiento";
 
-      const character = getCharacter("Mónica", "del Raval", 59, {
-        url: "/images/monica_del_raval",
-        description: "Portrait of Monica del Raval",
-      });
-
-      const CharacterCard = getCharacterCard(character);
+      const CharacterCard = getCharacterCard(mariaSarmiento);
       screen.appendChild(CharacterCard);
 
       const characterName = screen.querySelector("h2");
