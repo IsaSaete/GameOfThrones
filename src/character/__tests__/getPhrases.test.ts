@@ -21,7 +21,6 @@ describe("Given the getPhrases funtion", () => {
         },
         5,
       ),
-
       getKing(
         {
           name: "María",
