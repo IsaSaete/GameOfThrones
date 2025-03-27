@@ -1,22 +1,14 @@
-import killCharacter from "../killCharacter.js";
-import makeCharacterSpeak from "../makeCharacterSpeak.js";
-import { Character, Portrait } from "../types";
+import { Character, CharacterCommonData } from "../types";
 
-const getCharacter = (
-  name: string,
-  lastName: string,
-  age: number,
-  portrait: Portrait,
-) => {
+const getCharacter = (characterCommonData: CharacterCommonData) => {
   const character: Character = {
-    name,
-    lastName,
-    age,
+    ...characterCommonData,
     isAlive: true,
-    portrait,
-    actions: {
-      kill: killCharacter,
-      speak: makeCharacterSpeak,
+    kill() {
+      this.isAlive = false;
+    },
+    speak() {
+      throw new Error("Abstract method");
     },
   };
 
