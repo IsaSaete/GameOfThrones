@@ -1,64 +1,50 @@
-import { King } from "../king/type";
-import { Squire } from "../squire/types";
-import { Fighter } from "../fighter/types";
 import { Adviser } from "../adviser/type";
+import { getKing } from "../king/factory/getKing";
+import { getFighter } from "../fighter/factory/getFighter";
+import getCharacter from "./factory/getCharacter";
+import getSquire from "../squire/getSquire";
+import killCharacter from "./killCharacter";
+import makeCharacterSpeak from "./makeCharacterSpeak";
 
-const joffreyBaratheon: King = {
-  name: "Joffrey",
-  lastName: "Baratheon",
-  age: 14,
-  isAlive: false,
-  portraitUrl: "/images/portrait/Joffrey_Baratheon.webp",
-  portraitDescription: "Portrait of Joffrey Baratheon",
-  yearsOfReign: 5,
-  phrase: "You are all going to die",
-};
+const character1 = getCharacter("Joffrey", "Baratheon", 14, {
+  url: "/images/portrait/Joffrey_Baratheon.webp",
+  description: "Portrait of Joffrey Baratheon",
+});
 
-const jaimeLanister: Fighter = {
-  name: "Jaime ",
-  lastName: "Lannister",
-  age: 43,
-  isAlive: false,
-  portraitUrl: "/images/portrait/Jaime_Lannister.webp",
-  portraitDescription: "Portrait of Jaime Lannister",
-  weapon: "Widow's Wail Sword",
-  dexterity: 6,
-  phrase: "First I punch, then I ask",
-};
+const character2 = getCharacter("Jaime", "Lannister", 43, {
+  url: "/images/portrait/Jaime_Lannister.webp",
+  description: "Portrait of Jaime Lannister",
+});
 
-const daenerysTargaryen: Fighter = {
-  name: "Daenerys",
-  lastName: "Targaryen",
-  age: 24,
-  isAlive: false,
-  portraitUrl: "/images/portrait/Daenerys_Targaryen.webp",
-  portraitDescription: "Portrait of a serious Daenerys Targaryen",
-  weapon: "dragons",
-  dexterity: 8,
-  phrase: "First I punch, then I ask",
-};
+const character3 = getCharacter("Daenerys", "Targaryen", 24, {
+  url: "/images/portrait/Daenerys_Targaryen.webp",
+  description: "Portrait of a serious Daenerys Targaryen",
+});
 
+const character4 = getCharacter("Bronn", "Blackwater", 32, {
+  url: "/images/portrait/Bronn.webp",
+  description: "Portratit of Bronn",
+});
+
+const joffreyBaratheon = getKing(character1, 5);
+const jaimeLanister = getFighter(character2, "Widow's Wail Sword", 6);
+const daenerysTargaryen = getFighter(character3, "dragons", 8);
+const bronnBlackwater = getSquire(character4, 5, daenerysTargaryen);
 const tyrionLannister: Adviser = {
   name: "Tyrion",
   lastName: "Lannister",
   age: 39,
   isAlive: true,
-  portraitUrl: "/images/portrait/Tyrion_Lannister.webp",
-  portraitDescription: "Portrait of Tyrion Lannister",
+  portrait: {
+    url: "/images/portrait/Tyrion_Lannister.webp",
+    description: "Portrait of Tyrion Lannister",
+  },
+  actions: {
+    kill: killCharacter,
+    speak: makeCharacterSpeak,
+  },
   advisesTo: joffreyBaratheon,
   phrase: "I don't know why, but I think I'm going to die soon",
-};
-
-const bronnBlackwater: Squire = {
-  name: "Bronn",
-  lastName: "Blackwater",
-  age: 32,
-  isAlive: true,
-  portraitUrl: "/images/portrait/Bronn.webp",
-  portraitDescription: "Portratit of Bronn",
-  servesTo: daenerysTargaryen,
-  ballism: 5,
-  phrase: "I'm a loser",
 };
 
 export {
