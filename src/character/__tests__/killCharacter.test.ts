@@ -1,5 +1,5 @@
 import killCharacter from "../killCharacter";
-import { lebronJames } from "../../shared/fixtures";
+import { lebronJames } from "../../fighter/fixtures";
 
 describe("Given the killCharacter function", () => {
   describe("When it receives LeBron James fighter", () => {

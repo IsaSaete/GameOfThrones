@@ -1,5 +1,5 @@
 import makeCharacterSpeak from "../makeCharacterSpeak";
-import { lebronJames } from "../../shared/fixtures";
+import { lebronJames } from "../../fighter/fixtures";
 
 describe("Given the makeCharacterSpeak function", () => {
   describe("When it receives LeBron James Fighter", () => {

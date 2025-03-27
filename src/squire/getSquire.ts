@@ -1,23 +1,22 @@
-import { Character } from "../character/types";
+import getCharacter from "../character/factory/getCharacter";
+import { CharacterCommonData } from "../character/types";
 import { Fighter } from "../fighter/types";
-import { Squire } from "./types";
-import { NumberRange } from "../shared/types";
+import { BallismRange, Squire } from "./types";
 
 const getSquire = (
-  characterData: Character,
-  ballism: NumberRange,
+  characterCommonData: CharacterCommonData,
+  ballism: BallismRange,
   servesTo: Fighter,
 ): Squire => {
+  const commonData = getCharacter(characterCommonData);
+
   const squire: Squire = {
-    name: characterData.name,
-    lastName: characterData.lastName,
-    age: characterData.age,
-    isAlive: true,
-    portrait: characterData.portrait,
-    actions: characterData.actions,
+    ...commonData,
     servesTo,
     ballism,
-    phrase: "I'm a loser",
+    speak() {
+      return "I'm a loser";
+    },
   };
 
   return squire;

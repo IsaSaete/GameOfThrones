@@ -1,13 +1,18 @@
-import getCharacter from "../character/factory/getCharacter";
 import getSquire from "./getSquire";
-import { lebronJames } from "../shared/fixtures";
+import { lebronJames } from "../fighter/fixtures";
+import { CharacterCommonData } from "../character/types";
 
 describe("Given the getSquire function", () => {
   describe("When it receives Michael Olowokandi character, 5 ballism, and LeBron James", () => {
-    const characterData = getCharacter("Michael", "Olowokandi", 2, {
-      url: "",
-      description: "",
-    });
+    const characterData: CharacterCommonData = {
+      name: "Michael",
+      lastName: "Olowokandi",
+      age: 2,
+      portrait: {
+        url: "",
+        description: "",
+      },
+    };
     const ballism = 5;
 
     test("Then it should return squire with name 'Michael'", () => {
@@ -39,8 +44,9 @@ describe("Given the getSquire function", () => {
       const expectedPhrase = "I'm a loser";
 
       const squire = getSquire(characterData, ballism, lebronJames);
+      const squirePhrase = squire.speak();
 
-      expect(squire.phrase).toBe(expectedPhrase);
+      expect(squirePhrase).toBe(expectedPhrase);
     });
   });
 });
