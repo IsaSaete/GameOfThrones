@@ -1,14 +1,17 @@
-import { Character } from "../../character/type.js";
-import { King } from "../type.js";
+import { Character } from "../../character/types.js";
+import { King } from "../types.js";
 
-export const getKing = (character: Character, yearsOfReign: number): King => {
+export const getKing = (
+  characterData: Character,
+  yearsOfReign: number,
+): King => {
   const king: King = {
-    name: character.name,
-    lastName: character.lastName,
-    age: character.age,
-    isAlive: character.isAlive,
-    portraitUrl: character.portraitUrl,
-    portraitDescription: character.portraitDescription,
+    name: characterData.name,
+    lastName: characterData.lastName,
+    age: characterData.age,
+    isAlive: characterData.isAlive,
+    portrait: characterData.portrait,
+    actions: characterData.actions,
     yearsOfReign,
     phrase: "You are all going to die",
   };

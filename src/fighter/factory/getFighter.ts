@@ -1,19 +1,19 @@
-import { Character } from "../../character/type.js";
+import { Character } from "../../character/types.js";
 import { Fighter } from "../types.js";
-import { Range } from "../types.js";
+import { NumberRange } from "../../shared/types.js";
 
 export const getFighter = (
-  dataCharacter: Character,
+  characterData: Character,
   weapon: string,
-  dexterity: Range,
+  dexterity: NumberRange,
 ): Fighter => {
   const fighter: Fighter = {
-    name: dataCharacter.name,
-    lastName: dataCharacter.lastName,
-    age: dataCharacter.age,
-    isAlive: dataCharacter.isAlive,
-    portraitUrl: dataCharacter.portraitUrl,
-    portraitDescription: dataCharacter.portraitDescription,
+    name: characterData.name,
+    lastName: characterData.lastName,
+    age: characterData.age,
+    isAlive: characterData.isAlive,
+    portrait: characterData.portrait,
+    actions: characterData.actions,
     weapon,
     dexterity,
     phrase: "First I punch, then I ask",

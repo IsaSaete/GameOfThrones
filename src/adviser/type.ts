@@ -1,6 +1,6 @@
-import { Character } from "../character/type";
+import { Character } from "../character/types";
 import { Fighter } from "../fighter/types";
-import { King } from "../king/type";
+import { King } from "../king/types";
 
 export type Adviser = Character & {
   advisesTo: King | Adviser | Fighter;

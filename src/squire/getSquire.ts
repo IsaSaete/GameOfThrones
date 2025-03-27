@@ -1,10 +1,11 @@
-import { Character } from "../character/type";
+import { Character } from "../character/types";
 import { Fighter } from "../fighter/types";
-import { Range, Squire } from "./types";
+import { Squire } from "./types";
+import { NumberRange } from "../shared/types";
 
 const getSquire = (
   characterData: Character,
-  ballism: Range,
+  ballism: NumberRange,
   servesTo: Fighter,
 ): Squire => {
   const squire: Squire = {
@@ -12,8 +13,8 @@ const getSquire = (
     lastName: characterData.lastName,
     age: characterData.age,
     isAlive: true,
-    portraitUrl: characterData.portraitUrl,
-    portraitDescription: characterData.portraitDescription,
+    portrait: characterData.portrait,
+    actions: characterData.actions,
     servesTo,
     ballism,
     phrase: "I'm a loser",
