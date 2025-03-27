@@ -1,11 +1,11 @@
-import { CharacterType } from "../shared/types";
+import { Character } from "./types";
 
-const makeCharacterSpeak = (character: CharacterType): string => {
-  if (!character.phrase) {
+const makeCharacterSpeak = (character: Character): string => {
+  if (!character.speak()) {
     throw new Error("Missing phrase property.");
   }
 
-  return character.phrase;
+  return character.speak();
 };
 
 export default makeCharacterSpeak;

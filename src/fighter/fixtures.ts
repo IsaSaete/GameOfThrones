@@ -14,4 +14,18 @@ const lebronJames = getFighter(
   10,
 );
 
-export { lebronJames };
+const carbassot = getFighter(
+  {
+    name: "Carbassot",
+    lastName: "Carbassa",
+    age: 7,
+    portrait: {
+      url: "",
+      description: "",
+    },
+  },
+  "Knife",
+  2,
+);
+
+export { lebronJames, carbassot };
