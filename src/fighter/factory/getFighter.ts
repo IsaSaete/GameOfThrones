@@ -2,7 +2,7 @@ import getCharacter from "../../character/factory/getCharacter.js";
 import { CharacterCommonData } from "../../character/types.js";
 import { DexterityRange, Fighter } from "../types.js";
 
-export const getFighter = (
+const getFighter = (
   characterCommonData: CharacterCommonData,
   weapon: string,
   dexterity: DexterityRange,
@@ -18,3 +18,5 @@ export const getFighter = (
 
   return fighter;
 };
+
+export default getFighter;

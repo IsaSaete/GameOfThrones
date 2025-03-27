@@ -1,6 +1,6 @@
 import { getHeader } from "../Header/getHeader.js";
 import getCharacterCard from "../CharacterCard/getCharacterCard.js";
-import getCharacter from "../../character/factory/getCharacter.js";
+import { characters } from "../../character/data.js";
 
 export const getApp = (): HTMLElement => {
   const App = document.createElement("div");
@@ -8,11 +8,7 @@ export const getApp = (): HTMLElement => {
 
   const Header = getHeader();
 
-  const character = getCharacter("Daenerys", "Targaryen", 14, {
-    url: "/images/portrait/Joffrey_Baratheon.webp",
-    description: "Portrait of Joffrey Baratheon",
-  });
-  const CharacterCard = getCharacterCard(character);
+  const CharacterCard = getCharacterCard(characters[0]);
 
   App.appendChild(Header);
   App.appendChild(CharacterCard);

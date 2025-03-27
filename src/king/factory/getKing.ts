@@ -2,7 +2,7 @@ import getCharacter from "../../character/factory/getCharacter.js";
 import { CharacterCommonData } from "../../character/types.js";
 import { King } from "../types.js";
 
-export const getKing = (
+const getKing = (
   characterCommonData: CharacterCommonData,
   yearsOfReign: number,
 ): King => {
@@ -18,3 +18,5 @@ export const getKing = (
 
   return king;
 };
+
+export default getKing;

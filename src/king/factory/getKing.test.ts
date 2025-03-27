@@ -1,5 +1,5 @@
 import { CharacterCommonData } from "../../character/types";
-import { getKing } from "./getKing";
+import getKing from "./getKing.js";
 
 describe("Given the getKing function", () => {
   describe("When it receives Felipe IV character and 19 years of reign", () => {

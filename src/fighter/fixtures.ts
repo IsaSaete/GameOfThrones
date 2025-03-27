@@ -1,4 +1,4 @@
-import { getFighter } from "./factory/getFighter";
+import getFighter from "./factory/getFighter";
 
 const lebronJames = getFighter(
   {

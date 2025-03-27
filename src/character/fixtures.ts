@@ -1,78 +1,66 @@
-import { King } from "../king/types";
-import { Squire } from "../squire/types";
-import { Fighter } from "../fighter/types";
-import { Adviser } from "../adviser/type";
-import killCharacter from "./killCharacter";
-import makeCharacterSpeak from "./makeCharacterSpeak";
+import getKing from "../king/factory/getKing";
+import getFighter from "../fighter/factory/getFighter";
+import getAdviser from "../adviser/getAdviser";
+import getSquire from "../squire/getSquire";
+import { Character } from "./types";
 
-const mariaSarmiento: King = {
-  name: "María",
-  lastName: "Sarmiento",
-  age: 50,
-  isAlive: false,
-  portrait: {
-    url: "",
-    description: "",
+const mariaSarmiento = getKing(
+  {
+    name: "María",
+    lastName: "Sarmiento",
+    age: 50,
+    portrait: {
+      url: "",
+      description: "",
+    },
   },
-  actions: {
-    kill: killCharacter,
-    speak: makeCharacterSpeak,
-  },
-  yearsOfReign: 2,
-  phrase: "You are all going to die",
-};
+  2,
+);
 
-const carbassot: Fighter = {
-  name: "Carbassot",
-  lastName: "Carbassa",
-  age: 7,
-  isAlive: false,
-  portrait: {
-    url: "",
-    description: "",
+const carbassot = getFighter(
+  {
+    name: "Carbassot",
+    lastName: "Carbassa",
+    age: 7,
+    portrait: {
+      url: "",
+      description: "",
+    },
   },
-  actions: {
-    kill: killCharacter,
-    speak: makeCharacterSpeak,
-  },
-  weapon: "",
-  dexterity: 2,
-  phrase: "First I punch, then I ask",
-};
+  "Knife",
+  2,
+);
 
-const paquitoChocolatero: Adviser = {
-  name: "Paquito",
-  lastName: "Chocolatero",
-  age: 40,
-  isAlive: true,
-  portrait: {
-    url: "",
-    description: "",
+const paquitoChocolatero = getAdviser(
+  {
+    name: "Paquito",
+    lastName: "Chocolatero",
+    age: 40,
+    portrait: {
+      url: "",
+      description: "",
+    },
   },
-  actions: {
-    kill: killCharacter,
-    speak: makeCharacterSpeak,
-  },
-  advisesTo: mariaSarmiento,
-  phrase: "I don't know why, but I think I'm going to die soon",
-};
+  mariaSarmiento,
+);
 
-const bradPitt: Squire = {
-  name: "Brad",
-  lastName: "Pitt",
-  age: 55,
-  isAlive: true,
-  portrait: {
-    url: "",
-    description: "",
+const bradPitt = getSquire(
+  {
+    name: "Brad",
+    lastName: "Pitt",
+    age: 55,
+    portrait: {
+      url: "",
+      description: "",
+    },
   },
-  actions: {
-    kill: killCharacter,
-    speak: makeCharacterSpeak,
-  },
-  servesTo: carbassot,
-  ballism: 8,
-  phrase: "I'm a loser",
-};
+  8,
+  carbassot,
+);
 
-export { mariaSarmiento, carbassot, paquitoChocolatero, bradPitt };
+export const fixtureCharacters: Character[] = [
+  mariaSarmiento,
+  carbassot,
+  paquitoChocolatero,
+  bradPitt,
+];

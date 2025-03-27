@@ -1,5 +1,5 @@
 import { CharacterCommonData } from "../../character/types";
-import { getFighter } from "./getFighter";
+import getFighter from "./getFighter";
 
 describe("Given the getFighter function", () => {
   describe("When it recives Jon Snow character, the Longclaw weapon and a number 8 dexterity", () => {
