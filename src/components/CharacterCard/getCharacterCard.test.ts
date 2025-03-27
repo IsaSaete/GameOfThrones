@@ -1,3 +1,4 @@
+import getCharacter from "../../character/factory/getCharacter";
 import getCharacterCard from "./getCharacterCard";
 
 describe("Given a CharacterCard componen", () => {
@@ -6,14 +7,12 @@ describe("Given a CharacterCard componen", () => {
       const screen = document.createElement("div");
       const expectedCharacterName = "Mónica del Raval";
 
-      const CharacterCard = getCharacterCard({
-        name: "Mónica",
-        lastName: "del Raval",
-        age: 59,
-        isAlive: false,
-        portraitUrl: "/images/monica_del_raval",
-        portraitDescription: "Portrait of Monica del Raval",
+      const character = getCharacter("Mónica", "del Raval", 59, {
+        url: "/images/monica_del_raval",
+        description: "Portrait of Monica del Raval",
       });
+
+      const CharacterCard = getCharacterCard(character);
       screen.appendChild(CharacterCard);
 
       const characterName = screen.querySelector("h2");
