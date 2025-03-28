@@ -4,14 +4,12 @@ const getCharacterCard = (character: Character): HTMLElement => {
   const characterCardElement = document.createElement("article");
   characterCardElement.classList = "character-card";
 
-  const characterInfoElement = document.createElement("div");
-  characterInfoElement.classList = "character-info";
-
-  characterCardElement.appendChild(characterInfoElement);
-
-  characterInfoElement.innerHTML = `
-  <h2 class="character-name" >${character.name} ${character.lastName}</h2>
-`;
+  characterCardElement.innerHTML = `
+  <div class="character-card__info">
+    <h2 class="character-name">${character.name} ${character.lastName}</h2>
+    <span class="character-card__age">Age: ${character.age} years</span>
+  </div>
+  `;
 
   return characterCardElement;
 };
