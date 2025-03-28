@@ -1,11 +1,11 @@
-import { Character } from "../../character/types";
+import { Character } from "../../types";
 
 const getCharacterCard = (character: Character): HTMLElement => {
   const characterCardElement = document.createElement("article");
   characterCardElement.classList = "character-card";
 
   const characterInfoElement = document.createElement("div");
-  characterInfoElement.classList = "character-info";
+  characterInfoElement.classList = "character-card__info";
 
   characterCardElement.appendChild(characterInfoElement);
 

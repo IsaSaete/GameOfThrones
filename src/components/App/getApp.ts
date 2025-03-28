@@ -1,6 +1,6 @@
 import { getHeader } from "../Header/getHeader.js";
-import getCharacterCard from "../CharacterCard/getCharacterCard.js";
 import { characters } from "../../character/data.js";
+import getCharacterslist from "../../character/components/CharacterCardList/getCharactersCardList.js";
 
 export const getApp = (): HTMLElement => {
   const App = document.createElement("div");
@@ -8,7 +8,7 @@ export const getApp = (): HTMLElement => {
 
   const Header = getHeader();
 
-  const CharacterCard = getCharacterCard(characters[0]);
+  const CharacterCard = getCharacterslist(characters);
 
   App.appendChild(Header);
   App.appendChild(CharacterCard);
