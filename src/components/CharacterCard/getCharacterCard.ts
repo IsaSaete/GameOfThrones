@@ -4,21 +4,21 @@ import getCharacterPortrait from "./getCharacterPortrait.js";
 const getCharacterCard = ({
   name,
   lastName,
+  age,
   portrait,
 }: Character): HTMLElement => {
   const CharacterCard = document.createElement("article");
   CharacterCard.classList = "character";
 
-  const characterPortrait = getCharacterPortrait(portrait);
-  CharacterCard.appendChild(characterPortrait);
-
-  const characterInfo = document.createElement("div");
-  characterInfo.className = "character__info";
-  CharacterCard.appendChild(characterInfo);
-
-  characterInfo.innerHTML = `
-    <h2 class="character__name" >${name} ${lastName}</h2>
+  CharacterCard.innerHTML = `
+  <div class="character__info">
+  <h2 class="character__name">${name} ${lastName}</h2>
+  <span class="character__age">Age: ${age} years</span>
+  </div>
   `;
+
+  const characterPortrait = getCharacterPortrait(portrait);
+  CharacterCard.prepend(characterPortrait);
 
   return CharacterCard;
 };

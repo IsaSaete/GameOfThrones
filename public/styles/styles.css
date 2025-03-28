@@ -35,6 +35,7 @@ img {
 }
 
 .character {
+  color: #fff;
   box-shadow: 2px 2px 7px #000;
   border-radius: 5px;
   width: 350px;
@@ -44,13 +45,19 @@ img {
 }
 
 .character__info {
+  width: 100%;
   padding: 20px;
-  border-radius: 0 0 5px 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.character__age {
+  font-size: 0.85rem;
 }
 
 .character__name {
   font-weight: 400;
-  color: #fff;
   margin: 0;
 }
 
