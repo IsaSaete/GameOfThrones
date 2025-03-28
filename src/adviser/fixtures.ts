@@ -7,8 +7,8 @@ const paquitoChocolatero = getAdviser(
     lastName: "Chocolatero",
     age: 40,
     portrait: {
-      url: "",
-      description: "",
+      url: "https://paquitochocolatero.com/portrait.webp",
+      description: "A very chocolatey man",
     },
   },
   mariaSarmiento,
