@@ -39,14 +39,23 @@ body {
   height: 410px;
   display: flex;
   align-items: flex-end;
+  background-color: #331c0e;
 }
 
-.character-info {
-  background-color: #331c0e;
+.character-card__info {
   height: 160px;
   width: 100%;
-  padding: 30px 20px 20px 20px;
-  border-radius: 0px 0px 5px 5px;
+  padding: 20px;
+  border-radius: 0px 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.character-card__age {
+  color: #fff;
+  font-family: inherit;
+  font-size: 0.85rem;
 }
 
 .character-name {
