@@ -8,17 +8,12 @@ body {
   margin: 0;
 }
 
-.root {
-  margin: 0;
+img {
+  width: 100%;
 }
 
-.main-content {
+.root {
   margin: 0;
-  padding: 0px 30px 30px 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 
 .main-header {
@@ -32,35 +27,40 @@ body {
   font-size: 2.8rem;
 }
 
-.character-card {
+.main-content {
+  margin: 0;
+  padding: 0px 30px 30px 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.character {
+  color: #fff;
   box-shadow: 2px 2px 7px #000;
   border-radius: 5px;
   width: 350px;
-  height: 410px;
   display: flex;
-  align-items: flex-end;
+  flex-direction: column;
   background-color: #331c0e;
 }
 
-.character-card__info {
-  height: 160px;
+.character__info {
   width: 100%;
   padding: 20px;
-  border-radius: 0px 5px;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.character-card__age {
-  color: #fff;
-  font-family: inherit;
+.character__age {
   font-size: 0.85rem;
 }
 
-.character-name {
+.character__name {
   font-weight: 400;
-  color: #fff;
-  padding: 0px;
   margin: 0;
+}
+
+.character__portrait {
+  border-radius: 5px 5px 0 0;
 }

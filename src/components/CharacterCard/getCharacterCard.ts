@@ -1,17 +1,26 @@
 import { Character } from "../../character/types";
+import getCharacterPortrait from "./getCharacterPortrait.js";
 
-const getCharacterCard = (character: Character): HTMLElement => {
-  const characterCardElement = document.createElement("article");
-  characterCardElement.classList = "character-card";
+const getCharacterCard = ({
+  name,
+  lastName,
+  age,
+  portrait,
+}: Character): HTMLElement => {
+  const CharacterCard = document.createElement("article");
+  CharacterCard.classList = "character";
 
-  characterCardElement.innerHTML = `
-  <div class="character-card__info">
-    <h2 class="character-name">${character.name} ${character.lastName}</h2>
-    <span class="character-card__age">Age: ${character.age} years</span>
+  CharacterCard.innerHTML = `
+  <div class="character__info">
+  <h2 class="character__name">${name} ${lastName}</h2>
+  <span class="character__age">Age: ${age} years</span>
   </div>
   `;
 
-  return characterCardElement;
+  const characterPortrait = getCharacterPortrait(portrait);
+  CharacterCard.prepend(characterPortrait);
+
+  return CharacterCard;
 };
 
 export default getCharacterCard;

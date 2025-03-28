@@ -9,7 +9,7 @@ const joffreyBaratheon = getKing(
     lastName: "Baratheon",
     age: 14,
     portrait: {
-      url: "/images/portrait/Joffrey_Baratheon.webp",
+      url: "/images/portraits/Joffrey_Baratheon.webp",
       description: "Portrait of Joffrey Baratheon",
     },
   },
@@ -22,7 +22,7 @@ const jaimeLanister = getFighter(
     lastName: "Lannister",
     age: 43,
     portrait: {
-      url: "/images/portrait/Jaime_Lannister.webp",
+      url: "/images/portraits/Jaime_Lannister.webp",
       description: "Portrait of Jaime Lannister",
     },
   },
@@ -36,7 +36,7 @@ const daenerysTargaryen = getFighter(
     lastName: "Targaryen",
     age: 24,
     portrait: {
-      url: "/images/portrait/Daenerys_Targaryen.webp",
+      url: "/images/portraits/Daenerys_Targaryen.webp",
       description: "Portrait of a serious Daenerys Targaryen",
     },
   },
@@ -50,7 +50,7 @@ const bronnBlackwater = getSquire(
     lastName: "Blackwater",
     age: 32,
     portrait: {
-      url: "/images/portrait/Bronn.webp",
+      url: "/images/portraits/Bronn.webp",
       description: "Portratit of Bronn",
     },
   },
@@ -64,7 +64,7 @@ const tyrionLannister = getAdviser(
     lastName: "Lannister",
     age: 39,
     portrait: {
-      url: "/images/portrait/Tyrion_Lannister.webp",
+      url: "/images/portraits/Tyrion_Lannister.webp",
       description: "Portrait of Tyrion Lannister",
     },
   },
