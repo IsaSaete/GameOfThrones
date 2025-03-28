@@ -8,6 +8,12 @@ body {
   margin: 0;
 }
 
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 .root {
   margin: 0;
 }
@@ -18,7 +24,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
 }
 
 .main-header {
@@ -32,26 +37,29 @@ body {
   font-size: 2.8rem;
 }
 
+.characters-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  row-gap: 15px;
+  column-gap: 30px;
+}
+
 .character-card {
   box-shadow: 2px 2px 7px #000;
   border-radius: 5px;
-  width: 350px;
-  height: 410px;
-  display: flex;
-  align-items: flex-end;
+  color: #fff;
+  padding: 0px;
+  margin: 0;
+  background-color: #331c0e;
 }
 
-.character-info {
-  background-color: #331c0e;
-  height: 160px;
+.character-card__info {
   width: 100%;
   padding: 30px 20px 20px 20px;
   border-radius: 0px 0px 5px 5px;
 }
 
 .character-name {
-  font-weight: 400;
-  color: #fff;
-  padding: 0px;
   margin: 0;
 }
