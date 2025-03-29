@@ -6,10 +6,10 @@ const getKing = (
   characterCommonData: CharacterCommonData,
   yearsOfReign: number,
 ): King => {
-  const commonData = getCharacter(characterCommonData);
+  const character = getCharacter(characterCommonData);
 
   const king: King = {
-    ...commonData,
+    ...character,
     yearsOfReign,
     speak() {
       return "You are all going to die";

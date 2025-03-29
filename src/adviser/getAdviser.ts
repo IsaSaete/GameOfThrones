@@ -6,10 +6,10 @@ const getAdviser = (
   characterCommonData: CharacterCommonData,
   advisesTo: Character,
 ): Adviser => {
-  const commonData = getCharacter(characterCommonData);
+  const character = getCharacter(characterCommonData);
 
   const adviser: Adviser = {
-    ...commonData,
+    ...character,
     advisesTo,
     speak() {
       return "I don't know why, but I think I'm going to die soon";
