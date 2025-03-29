@@ -1,5 +1,5 @@
-import { paquitoChocolatero } from "../../../adviser/fixtures.js";
-import getCharacterPortrait from "./getCharacterPortrait.js";
+import { paquitoChocolatero } from "../../../../adviser/fixtures.js";
+import getCharacterPortrait from "../getCharacterPortrait.js";
 
 describe("Given the getCharacterPortrait function", () => {
   describe("When it receives the portrait of Paquito Chocolatero", () => {
