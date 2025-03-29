@@ -6,8 +6,8 @@ const mariaSarmiento = getKing(
     lastName: "Sarmiento",
     age: 50,
     portrait: {
-      url: "",
-      description: "",
+      url: "https://mariasarmiento.com/maria.webp",
+      description: "Maria Sarmiento being crowned with a golden crown",
     },
   },
   2,

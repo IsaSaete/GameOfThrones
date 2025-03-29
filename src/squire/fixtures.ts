@@ -7,8 +7,8 @@ const bradPitt = getSquire(
     lastName: "Pitt",
     age: 55,
     portrait: {
-      url: "",
-      description: "",
+      url: "https://bradpitt.com/bradpitt.webp",
+      description: "Brad Pitt looking defeated",
     },
   },
   8,
