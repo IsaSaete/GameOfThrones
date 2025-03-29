@@ -1,12 +1,12 @@
 import { Character } from "../../types";
 
-const getCharacterEmoji = (character: Character): HTMLElement => {
+const getCharacterEmoji = (characterPhrase: string): HTMLElement => {
   const emojiElement = document.createElement("span");
   emojiElement.className = "emoji";
 
   let characterEmoji: string;
 
-  switch (character.speak()) {
+  switch (characterPhrase) {
     case "You are all going to die":
       characterEmoji = "👑";
       break;

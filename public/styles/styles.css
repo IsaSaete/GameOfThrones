@@ -17,12 +17,12 @@ ul {
   margin: 0;
 }
 
-.root {
-  margin: 0;
+img {
+  max-width: 100%;
 }
 
-img {
-  width: 100%;
+.root {
+  margin: 0;
 }
 
 .main-header {
@@ -71,20 +71,35 @@ img {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  font-size: 0.90rem;
+}
+
+.character__state {
+  display: flex;
+  gap: 5px;
+}
+
+.character__state-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 5px;
 }
 
 .character__name {
+  font-weight: 400;
+  padding: 0px;
   font-size: 1.2rem;
   margin: 0;
-}
-
-.character__age {
-  font-size: 0.75rem;
 }
 
 .character__portrait {
   border-radius: 5px 5px 0 0;
   height: auto;
+}
+
+.character__portrait--reverse {
+  scale: -1 -1;
 }
 
 .emoji {
