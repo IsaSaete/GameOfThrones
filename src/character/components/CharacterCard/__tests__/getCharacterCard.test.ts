@@ -38,8 +38,8 @@ describe("Given a CharacterCard component", () => {
     });
 
     describe("And she is dead", () => {
-      test("Then it should show a state with a thumb down icon", () => {
-        const expectedIconDescription = "thumb down icon";
+      test("Then it should show a state with a thumbs down icon", () => {
+        const expectedIconDescription = "Thumbs down icon";
         const deadCharacter = { ...mariaSarmiento };
         deadCharacter.isAlive = false;
 
