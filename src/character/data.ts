@@ -1,6 +1,6 @@
 import getKing from "../king/factory/getKing.js";
 import getFighter from "../fighter/factory/getFighter.js";
-import getSquire from "../squire/getSquire.js";
+import getSquire from "../squire/factory/getSquire.js";
 import getAdviser from "../adviser/getAdviser.js";
 
 const joffreyBaratheon = getKing(

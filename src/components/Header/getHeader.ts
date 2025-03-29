@@ -1,7 +1,7 @@
 export const getHeader = (): HTMLElement => {
-  const header = document.createElement("header");
+  const Header = document.createElement("header");
 
-  header.innerHTML = "<h1 class='main-title'>Game of Thrones</h1>";
+  Header.innerHTML = "<h1 class='main-title'>Game of Thrones</h1>";
 
-  return header;
+  return Header;
 };

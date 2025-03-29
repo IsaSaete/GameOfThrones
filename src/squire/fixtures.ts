@@ -1,4 +1,4 @@
-import getSquire from "./getSquire";
+import getSquire from "./factory/getSquire";
 import { carbassot } from "../fighter/fixtures";
 
 const bradPitt = getSquire(
