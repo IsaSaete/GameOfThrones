@@ -1,6 +1,12 @@
 import { mariaSarmiento } from "../../../../king/fixtures";
 import getCharacterCard from "../getCharacterCard.js";
 
+const screen = document.createElement("div");
+
+afterEach(() => {
+  screen.innerHTML = "";
+});
+
 describe("Given a CharacterCard component", () => {
   describe("When it receives a 'María Sarmiento'", () => {
     const handleGetOverlay = jest
@@ -8,7 +14,6 @@ describe("Given a CharacterCard component", () => {
       .mockReturnValue(document.createElement("div"));
 
     test("Then it should show 'María Sarmiento' inside a heading", () => {
-      const screen = document.createElement("div");
       const expectedCharacterName = "María Sarmiento";
 
       const CharacterCard = getCharacterCard(mariaSarmiento, handleGetOverlay);
@@ -21,7 +26,6 @@ describe("Given a CharacterCard component", () => {
     });
 
     test("Then it should show 'Age: 50 years", () => {
-      const screen = document.createElement("div");
       const expectedCharacterAge = "Age: " + 50 + " years";
 
       const CharacterCard = getCharacterCard(mariaSarmiento, handleGetOverlay);
@@ -31,6 +35,40 @@ describe("Given a CharacterCard component", () => {
 
       expect(characterAge).not.toBeNull();
       expect(characterAge?.textContent).toBe(expectedCharacterAge);
+    });
+
+    describe("And she is dead", () => {
+      test("Then it should show a state with a thumb down icon", () => {
+        const expectedIconDescription = "thumb down icon";
+        const deadCharacter = { ...mariaSarmiento };
+        deadCharacter.isAlive = false;
+
+        const CharacterCard = getCharacterCard(deadCharacter, handleGetOverlay);
+        screen.appendChild(CharacterCard);
+
+        const CardIcon = screen.querySelector(
+          ".character__state-icon",
+        ) as HTMLImageElement;
+
+        expect(CardIcon).not.toBeNull();
+        expect(CardIcon?.alt).toBe(expectedIconDescription);
+      });
+
+      test("Then it should show the portrait of María Sarmiento upside down", () => {
+        const deadCharacter = { ...mariaSarmiento };
+        deadCharacter.kill();
+        const expectedPortraitDescription =
+          "Portrait of María Sarmiento upside down";
+
+        const CharacterCard = getCharacterCard(deadCharacter, handleGetOverlay);
+        screen.appendChild(CharacterCard);
+
+        const CardImage = screen.querySelector(".reverse") as HTMLImageElement;
+        const actualPortraitDescription = CardImage?.alt;
+
+        expect(CardImage).not.toBeNull();
+        expect(actualPortraitDescription).toBe(expectedPortraitDescription);
+      });
     });
   });
 });

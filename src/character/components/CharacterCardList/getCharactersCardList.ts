@@ -8,7 +8,6 @@ const getCharacterslist = (characters: Character[]): HTMLElement => {
 
   characters.forEach((character) => {
     const characterWrapper = document.createElement("li");
-    characterWrapper.className = "character";
 
     const handleGetOverlay = () => getCardOverlay(character);
 

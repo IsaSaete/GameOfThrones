@@ -6,10 +6,13 @@ describe("Given the getCharacterPortrait function", () => {
     test("Then it should show an image of a very chocolatey man", () => {
       const screen = document.createElement("div");
       const paquitoPortrait = paquitoChocolatero.portrait;
+      const paquitoIsAlive = paquitoChocolatero.isAlive;
       const expectedDescription = paquitoPortrait.description;
 
-      const characterPortrait = getCharacterPortrait(paquitoPortrait);
-
+      const characterPortrait = getCharacterPortrait(
+        paquitoPortrait,
+        paquitoIsAlive,
+      );
       screen.appendChild(characterPortrait);
 
       const imageElement = screen.querySelector("img");
