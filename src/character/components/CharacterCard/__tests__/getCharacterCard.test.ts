@@ -1,13 +1,17 @@
-import { mariaSarmiento } from "../../../king/fixtures";
-import getCharacterCard from "./getCharacterCard.js";
+import { mariaSarmiento } from "../../../../king/fixtures";
+import getCharacterCard from "../getCharacterCard.js";
 
 describe("Given a CharacterCard component", () => {
   describe("When it receives a 'María Sarmiento'", () => {
+    const handleGetOverlay = jest
+      .fn()
+      .mockReturnValue(document.createElement("div"));
+
     test("Then it should show 'María Sarmiento' inside a heading", () => {
       const screen = document.createElement("div");
       const expectedCharacterName = "María Sarmiento";
 
-      const CharacterCard = getCharacterCard(mariaSarmiento);
+      const CharacterCard = getCharacterCard(mariaSarmiento, handleGetOverlay);
       screen.appendChild(CharacterCard);
 
       const characterName = screen.querySelector("h2");
@@ -20,7 +24,7 @@ describe("Given a CharacterCard component", () => {
       const screen = document.createElement("div");
       const expectedCharacterAge = "Age: " + 50 + " years";
 
-      const CharacterCard = getCharacterCard(mariaSarmiento);
+      const CharacterCard = getCharacterCard(mariaSarmiento, handleGetOverlay);
       screen.appendChild(CharacterCard);
 
       const characterAge = screen.querySelector("span");
