@@ -6,6 +6,7 @@
 
 body {
   margin: 0;
+  background-color: #b9540b;
 }
 
 .root {
@@ -19,6 +20,8 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  font-family: "EB Garamond", serif;
+  color: #fff;
 }
 
 .main-header {
@@ -27,9 +30,8 @@ body {
 }
 
 .main-title {
-  font-family: "EB Garamond", serif;
   font-weight: 600;
-  font-size: 2.8rem;
+  font-size: 3.5rem;
 }
 
 .character-card {
@@ -43,24 +45,24 @@ body {
 }
 
 .character-card__info {
-  height: 160px;
   width: 100%;
   padding: 20px;
   border-radius: 0px 5px;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  font-size: 1.1rem;
 }
 
-.character-card__age {
-  color: #fff;
-  font-family: inherit;
-  font-size: 0.85rem;
+.character-card__state {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: 5px;
 }
 
 .character-name {
   font-weight: 400;
-  color: #fff;
   padding: 0px;
   margin: 0;
 }
