@@ -2,9 +2,9 @@ import { Character } from "../../types";
 import getCharacterCard from "../CharacterCard/getCharacterCard.js";
 import getCardOverlay from "../CharacterCard/getCardOverlay.js";
 
-const getCharacterslist = (characters: Character[]): HTMLElement => {
-  const CharactersList = document.createElement("ul");
-  CharactersList.classList = "characters";
+const getCharacterCardsList = (characters: Character[]): HTMLElement => {
+  const CharacterCardsList = document.createElement("ul");
+  CharacterCardsList.classList = "characters";
 
   characters.forEach((character) => {
     const characterWrapper = document.createElement("li");
@@ -13,10 +13,10 @@ const getCharacterslist = (characters: Character[]): HTMLElement => {
     const CharacterCard = getCharacterCard(character, handleGetOverlay);
 
     characterWrapper.appendChild(CharacterCard);
-    CharactersList.appendChild(characterWrapper);
+    CharacterCardsList.appendChild(characterWrapper);
   });
 
-  return CharactersList;
+  return CharacterCardsList;
 };
 
-export default getCharacterslist;
+export default getCharacterCardsList;
