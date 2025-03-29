@@ -1,8 +1,8 @@
-import { mariaSarmiento } from "../../king/fixtures";
+import { mariaSarmiento } from "../../../king/fixtures";
 import getCharacterCard from "./getCharacterCard.js";
 
 describe("Given a CharacterCard component", () => {
-  describe("When it recives a 'María Sarmiento'", () => {
+  describe("When it receives a 'María Sarmiento'", () => {
     test("Then it should show 'María Sarmiento' inside a heading", () => {
       const screen = document.createElement("div");
       const expectedCharacterName = "María Sarmiento";

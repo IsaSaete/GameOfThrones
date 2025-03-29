@@ -1,4 +1,4 @@
-import { Portrait } from "../../character/types";
+import { Portrait } from "../../types";
 
 const getCharacterPortrait = ({ url, description }: Portrait): HTMLElement => {
   const characterPortrait = document.createElement("img");

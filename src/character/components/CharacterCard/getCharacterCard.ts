@@ -1,4 +1,4 @@
-import { Character } from "../../character/types";
+import { Character } from "../../types.js";
 import getCharacterPortrait from "./getCharacterPortrait.js";
 
 const getCharacterCard = ({
@@ -8,7 +8,7 @@ const getCharacterCard = ({
   portrait,
 }: Character): HTMLElement => {
   const CharacterCard = document.createElement("article");
-  CharacterCard.classList = "character";
+  CharacterCard.className = "card-character";
 
   CharacterCard.innerHTML = `
   <div class="character__info">
