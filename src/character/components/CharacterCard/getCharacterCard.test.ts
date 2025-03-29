@@ -28,5 +28,42 @@ describe("Given a CharacterCard component", () => {
       expect(characterAge).not.toBeNull();
       expect(characterAge?.textContent).toBe(expectedCharacterAge);
     });
+
+    test("Then it should show a state with a thumb down icon when María Sarmiento is dead", () => {
+      const screen = document.createElement("div");
+      const expectedIconDescription = "thumb down icon";
+
+      const deadCharacter = { ...mariaSarmiento };
+      deadCharacter.isAlive = false;
+
+      const CharacterCard = getCharacterCard(deadCharacter);
+
+      screen.appendChild(CharacterCard);
+
+      const CardIcon = screen.querySelector(
+        ".character__state-icon",
+      ) as HTMLImageElement;
+
+      expect(CardIcon).not.toBeNull();
+      expect(CardIcon?.alt).toBe(expectedIconDescription);
+    });
+
+    test("Then it should show the portrait of María Sarmiento upside down when her state is dead", () => {
+      const deadCharacter = { ... mariaSarmiento};
+      const screen = document.createElement("div");
+      deadCharacter.isAlive = false;
+      const expectedPortraitDescription = "Portrait of María Sarmiento upside down"
+
+      const CharacterCard = getCharacterCard(deadCharacter);
+
+      screen.appendChild(CharacterCard);
+
+      const actualPortraitDescription = deadCharacter.portrait.description
+
+      const CardImage = screen.querySelector(".character__portrait--reverse");
+
+      expect(CardImage).not.toBeNull();
+      expect(actualPortraitDescription).toBe(expectedPortraitDescription);
+    });
   });
 });
