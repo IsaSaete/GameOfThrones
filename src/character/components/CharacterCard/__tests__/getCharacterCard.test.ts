@@ -1,5 +1,5 @@
-import { mariaSarmiento } from "../../../king/fixtures";
-import getCharacterCard from "./getCharacterCard.js";
+import { mariaSarmiento } from "../../../../king/fixtures";
+import getCharacterCard from "../getCharacterCard.js";
 
 describe("Given a CharacterCard component", () => {
   describe("When it receives a 'María Sarmiento'", () => {
