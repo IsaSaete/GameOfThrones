@@ -6,6 +6,8 @@
 
 body {
   margin: 0;
+  font-family: fantasy;
+  color: #fff;
 }
 
 ul {
@@ -22,19 +24,16 @@ img {
   width: 100%;
 }
 
-.root {
-  margin: 0;
-}
-
 .main-header {
   display: flex;
   justify-content: center;
 }
 
 .main-title {
-  font-family: "EB Garamond", serif;
-  font-weight: 600;
+  font-family: "Cinzel Decorative", serif;
+  font-weight: 700;
   font-size: 2.8rem;
+  text-align: center;
 }
 
 .characters-list {
@@ -43,41 +42,43 @@ img {
   justify-content: center;
   row-gap: 15px;
   column-gap: 30px;
-  width: fit-content;
+
+  @media (width <= 500px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 .main-content {
   margin: 0;
-  padding: 0px 30px 30px 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 0px 80px 30px 80px;
+  background-color: #b9540c;
 }
 
 .character {
-  color: #fff;
   box-shadow: 2px 2px 7px #000;
   border-radius: 5px;
-  display: flex;
-  flex-direction: column;
   background-color: #331c0e;
 }
 
+.card-character {
+  display: flex;
+  flex-direction: column;
+}
+
 .character__info {
-  width: 100%;
-  padding: 20px;
+  padding: 10px 20px;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.character__age {
-  font-size: 0.85rem;
+.character__name {
+  font-size: 1.2rem;
+  margin: 0;
 }
 
-.character__name {
-  font-weight: 400;
-  margin: 0;
+.character__age {
+  font-size: 0.75rem;
 }
 
 .character__portrait {

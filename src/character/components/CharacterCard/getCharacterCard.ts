@@ -8,7 +8,7 @@ const getCharacterCard = ({
   portrait,
 }: Character): HTMLElement => {
   const CharacterCard = document.createElement("article");
-  CharacterCard.classList = "character";
+  CharacterCard.className = "card-character";
 
   CharacterCard.innerHTML = `
   <div class="character__info">
