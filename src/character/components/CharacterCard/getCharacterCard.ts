@@ -1,12 +1,10 @@
 import { Character } from "../../types.js";
 import getCharacterPortrait from "./getCharacterPortrait.js";
 
-const getCharacterCard = ({
-  name,
-  lastName,
-  age,
-  portrait,
-}: Character): HTMLElement => {
+const getCharacterCard = (
+  { name, lastName, age, portrait }: Character,
+  handleGetOverlay: () => HTMLElement,
+): HTMLElement => {
   const CharacterCard = document.createElement("article");
   CharacterCard.className = "card-character";
 
@@ -19,6 +17,9 @@ const getCharacterCard = ({
 
   const characterPortrait = getCharacterPortrait(portrait);
   CharacterCard.prepend(characterPortrait);
+
+  const cardOverlay = handleGetOverlay();
+  CharacterCard.appendChild(cardOverlay);
 
   return CharacterCard;
 };

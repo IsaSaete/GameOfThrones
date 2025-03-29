@@ -22,7 +22,7 @@ ul {
 }
 
 img {
-  width: 100%;
+  max-width: 100%;
 }
 
 .main-header {
@@ -64,6 +64,7 @@ img {
 .card-character {
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .character__info {
@@ -85,4 +86,21 @@ img {
 .character__portrait {
   border-radius: 5px 5px 0 0;
   height: auto;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  transition: all 0.3s;
+  opacity: 0;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    opacity: 1;
+  }
 }
