@@ -9,7 +9,22 @@ const getCharacterCardsList = (characters: Character[]): HTMLElement => {
   characters.forEach((character) => {
     const characterWrapper = document.createElement("li");
 
-    const handleGetOverlay = () => getCardOverlay(character);
+    const handleKillCharacter = () => {
+      character.kill();
+
+      const characterPosition = characters.findIndex(
+        (thisCharacter) => thisCharacter.name === character.name,
+      );
+
+      characters.splice(characterPosition, 0);
+
+      const newCharacterCardsList = getCharacterCardsList(characters);
+      CharacterCardsList.replaceWith(newCharacterCardsList);
+    };
+
+    const handleGetOverlay = () =>
+      getCardOverlay(character, handleKillCharacter);
+
     const CharacterCard = getCharacterCard(character, handleGetOverlay);
 
     characterWrapper.appendChild(CharacterCard);

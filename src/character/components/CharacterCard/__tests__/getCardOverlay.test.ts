@@ -3,6 +3,7 @@ import { bradPitt } from "../../../../squire/fixtures";
 import getCardOverlay from "../getCardOverlay";
 
 const screen = document.createElement("div");
+const handleKillCharacter = jest.fn();
 
 afterEach(() => {
   screen.innerHTML = "";
@@ -13,7 +14,7 @@ describe("Given the getCardOverlay function", () => {
     test("Then it should return show 'Weapon: Basketball' and 'Dexterity: 10'", () => {
       const expectedStats = ["Weapon: Basketball", "Dexterity: 10"];
 
-      const cardOverlay = getCardOverlay(lebronJames);
+      const cardOverlay = getCardOverlay(lebronJames, handleKillCharacter);
       screen.appendChild(cardOverlay);
 
       const overlayDiv = screen.querySelector(".overlay");
@@ -34,7 +35,7 @@ describe("Given the getCardOverlay function", () => {
         "Serves to: Carbassot Carbassa",
       ];
 
-      const cardOverlay = getCardOverlay(bradPitt);
+      const cardOverlay = getCardOverlay(bradPitt, handleKillCharacter);
       screen.appendChild(cardOverlay);
 
       const overlayDiv = screen.querySelector(".overlay");
