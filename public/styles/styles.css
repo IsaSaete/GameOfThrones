@@ -21,62 +21,76 @@ img {
   max-width: 100%;
 }
 
-.root {
-  margin: 0;
+.reverse {
+  rotate: 180deg !important;
 }
 
-.main-header {
+.root {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .main-title {
   font-family: "Cinzel Decorative", serif;
-  font-weight: 700;
   font-size: 2.8rem;
   text-align: center;
 }
 
-.characters-list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  justify-content: center;
-  row-gap: 15px;
-  column-gap: 30px;
-
-  @media (width <= 500px) {
-    grid-template-columns: repeat(1, 1fr);
-  }
+.main-content {
+  padding: 0px 80px 30px 80px;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
 }
 
-.main-content {
-  margin: 0 auto;
-  padding: 0px 80px 30px 80px;
-  max-width: 1200px;
+.characters {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  row-gap: 15px;
+  column-gap: 30px;
+  grid-auto-rows: 1fr;
+
+  @media (width >= 500px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (width >= 700px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .character {
   box-shadow: 2px 2px 7px #000;
-  border-radius: 5px;
   background-color: #331c0e;
-}
-
-.card-character {
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+
+.character__portrait {
+  height: auto;
 }
 
 .character__info {
-  padding: 10px 20px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  font-size: 0.90rem;
+  gap: 5px;
+  font-size: 0.9rem;
+  justify-content: space-between;
+  height: 100%;
 }
 
-.character__state {
-  display: flex;
-  gap: 5px;
+.character__name {
+  font-weight: 400;
+  padding: 0px;
+  font-size: 1.2rem;
+  margin-top: 0;
+  margin-bottom: 5px;
 }
 
 .character__state-container {
@@ -86,20 +100,27 @@ img {
   gap: 5px;
 }
 
-.character__name {
-  font-weight: 400;
-  padding: 0px;
-  font-size: 1.2rem;
-  margin: 0;
+.character__state {
+  display: flex;
+  gap: 5px;
 }
 
-.character__portrait {
-  border-radius: 5px 5px 0 0;
-  height: auto;
-}
+.overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  transition: all 0.3s;
+  opacity: 0;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 
-.character__portrait--reverse {
-  scale: -1 -1;
+  &:hover {
+    opacity: 1;
+  }
 }
 
 .emoji {

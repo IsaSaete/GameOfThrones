@@ -1,6 +1,6 @@
-import getSquire from "./getSquire";
-import { lebronJames } from "../fighter/fixtures";
-import { CharacterCommonData } from "../character/types";
+import getSquire from "./getSquire.js";
+import { lebronJames } from "../../fighter/fixtures";
+import { CharacterCommonData } from "../../character/types";
 
 describe("Given the getSquire function", () => {
   describe("When it receives Michael Olowokandi character, 5 ballism, and LeBron James", () => {

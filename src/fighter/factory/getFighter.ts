@@ -7,10 +7,10 @@ const getFighter = (
   weapon: string,
   dexterity: DexterityRange,
 ): Fighter => {
-  const commonData = getCharacter(characterCommonData);
+  const character = getCharacter(characterCommonData);
 
   const fighter: Fighter = {
-    ...commonData,
+    ...character,
     weapon,
     dexterity,
     speak: () => "First I punch, then I ask",

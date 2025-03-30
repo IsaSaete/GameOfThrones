@@ -6,8 +6,8 @@ const lebronJames = getFighter(
     lastName: "James",
     age: 40,
     portrait: {
-      url: "",
-      description: "",
+      url: "https://lebronjames.com/lebron.webp",
+      description: "LeBron James bouncing a ball",
     },
   },
   "Basketball",
@@ -20,8 +20,8 @@ const carbassot = getFighter(
     lastName: "Carbassa",
     age: 7,
     portrait: {
-      url: "",
-      description: "",
+      url: "https://carbassotcarbassa.com/carbassot.webp",
+      description: "A portrait of Carbassot Carbassa",
     },
   },
   "Knife",

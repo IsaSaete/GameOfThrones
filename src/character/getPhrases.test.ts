@@ -1,10 +1,10 @@
-import { getPhrases } from "../getPhrases";
-import { King } from "../../king/types";
-import getKing from "../../king/factory/getKing";
-import { mariaSarmiento } from "../../king/fixtures";
-import { carbassot } from "../../fighter/fixtures";
-import { bradPitt } from "../../squire/fixtures";
-import { paquitoChocolatero } from "../../adviser/fixtures";
+import { getPhrases } from "./getPhrases";
+import { King } from "../king/types";
+import getKing from "../king/factory/getKing";
+import { mariaSarmiento } from "../king/fixtures";
+import { carbassot } from "../fighter/fixtures";
+import { bradPitt } from "../squire/fixtures";
+import { paquitoChocolatero } from "../adviser/fixtures";
 
 describe("Given the getPhrases funtion", () => {
   describe("When it receives 3 Maria Sarmiento", () => {

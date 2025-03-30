@@ -1,13 +1,22 @@
 import { mariaSarmiento } from "../../../../king/fixtures";
 import getCharacterCard from "../getCharacterCard.js";
 
+const screen = document.createElement("div");
+
+afterEach(() => {
+  screen.innerHTML = "";
+});
+
 describe("Given a CharacterCard component", () => {
   describe("When it receives a 'María Sarmiento'", () => {
+    const handleGetOverlay = jest
+      .fn()
+      .mockReturnValue(document.createElement("div"));
+
     test("Then it should show 'María Sarmiento' inside a heading", () => {
-      const screen = document.createElement("div");
       const expectedCharacterName = "María Sarmiento";
 
-      const CharacterCard = getCharacterCard(mariaSarmiento);
+      const CharacterCard = getCharacterCard(mariaSarmiento, handleGetOverlay);
       screen.appendChild(CharacterCard);
 
       const characterName = screen.querySelector("h2");
@@ -17,10 +26,9 @@ describe("Given a CharacterCard component", () => {
     });
 
     test("Then it should show 'Age: 50 years", () => {
-      const screen = document.createElement("div");
       const expectedCharacterAge = "Age: " + 50 + " years";
 
-      const CharacterCard = getCharacterCard(mariaSarmiento);
+      const CharacterCard = getCharacterCard(mariaSarmiento, handleGetOverlay);
       screen.appendChild(CharacterCard);
 
       const characterAge = screen.querySelector("span");
@@ -29,41 +37,38 @@ describe("Given a CharacterCard component", () => {
       expect(characterAge?.textContent).toBe(expectedCharacterAge);
     });
 
-    test("Then it should show a state with a thumb down icon when María Sarmiento is dead", () => {
-      const screen = document.createElement("div");
-      const expectedIconDescription = "thumb down icon";
+    describe("And she is dead", () => {
+      test("Then it should show a state with a thumbs down icon", () => {
+        const expectedIconDescription = "Thumbs down icon";
+        const deadCharacter = { ...mariaSarmiento };
+        deadCharacter.isAlive = false;
 
-      const deadCharacter = { ...mariaSarmiento };
-      deadCharacter.isAlive = false;
+        const CharacterCard = getCharacterCard(deadCharacter, handleGetOverlay);
+        screen.appendChild(CharacterCard);
 
-      const CharacterCard = getCharacterCard(deadCharacter);
+        const CardIcon = screen.querySelector(
+          ".character__state-icon",
+        ) as HTMLImageElement;
 
-      screen.appendChild(CharacterCard);
+        expect(CardIcon).not.toBeNull();
+        expect(CardIcon?.alt).toBe(expectedIconDescription);
+      });
 
-      const CardIcon = screen.querySelector(
-        ".character__state-icon",
-      ) as HTMLImageElement;
+      test("Then it should show the portrait of María Sarmiento upside down", () => {
+        const deadCharacter = { ...mariaSarmiento };
+        deadCharacter.kill();
+        const expectedPortraitDescription =
+          "Portrait of María Sarmiento upside down";
 
-      expect(CardIcon).not.toBeNull();
-      expect(CardIcon?.alt).toBe(expectedIconDescription);
-    });
+        const CharacterCard = getCharacterCard(deadCharacter, handleGetOverlay);
+        screen.appendChild(CharacterCard);
 
-    test("Then it should show the portrait of María Sarmiento upside down when her state is dead", () => {
-      const deadCharacter = { ... mariaSarmiento};
-      const screen = document.createElement("div");
-      deadCharacter.isAlive = false;
-      const expectedPortraitDescription = "Portrait of María Sarmiento upside down"
+        const CardImage = screen.querySelector(".reverse") as HTMLImageElement;
+        const actualPortraitDescription = CardImage?.alt;
 
-      const CharacterCard = getCharacterCard(deadCharacter);
-
-      screen.appendChild(CharacterCard);
-
-      const actualPortraitDescription = deadCharacter.portrait.description
-
-      const CardImage = screen.querySelector(".character__portrait--reverse");
-
-      expect(CardImage).not.toBeNull();
-      expect(actualPortraitDescription).toBe(expectedPortraitDescription);
+        expect(CardImage).not.toBeNull();
+        expect(actualPortraitDescription).toBe(expectedPortraitDescription);
+      });
     });
   });
 });

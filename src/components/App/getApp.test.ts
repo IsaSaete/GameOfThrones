@@ -10,9 +10,8 @@ describe("Given the Header component", () => {
     test("Then it should show 'Game of Thrones' inside a header", () => {
       const screen = document.createElement("div");
 
-      const app = getApp();
-
-      screen.appendChild(app);
+      const App = getApp();
+      screen.appendChild(App);
 
       const appHeader = screen.querySelector("header");
 

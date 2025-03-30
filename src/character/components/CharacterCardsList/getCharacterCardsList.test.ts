@@ -1,9 +1,9 @@
 import { paquitoChocolatero } from "../../../adviser/fixtures";
 import { lebronJames } from "../../../fighter/fixtures";
 import { mariaSarmiento } from "../../../king/fixtures";
-import getCharacterslist from "./getCharactersCardList";
+import getCharacterCardsList from "./getCharacterCardsList.js";
 
-describe("Given a CharacterCardList component", () => {
+describe("Given a CharacterCardsList component", () => {
   describe("When it recieves Maria Sarmiento, Paquito Chocolatero y Lebron James", () => {
     test("Then it should show 'Maria Sarmiento','Paquito Chocolatero' and 'Lebron James' inside a heading each", () => {
       const screen = document.createElement("div");
@@ -13,12 +13,12 @@ describe("Given a CharacterCardList component", () => {
         lebronJames,
       ];
 
-      const CharacterList = getCharacterslist(expectedCharacters);
-      screen.appendChild(CharacterList);
+      const CharacterCardsList = getCharacterCardsList(expectedCharacters);
+      screen.appendChild(CharacterCardsList);
 
-      const characterNamesElements = screen.querySelectorAll("h2");
+      const characterNameElements = screen.querySelectorAll("h2");
 
-      characterNamesElements.forEach((characterNameElement, position) => {
+      characterNameElements.forEach((characterNameElement, position) => {
         expect(characterNameElement.textContent).toBe(
           `${expectedCharacters[position].name} ${expectedCharacters[position].lastName}`,
         );

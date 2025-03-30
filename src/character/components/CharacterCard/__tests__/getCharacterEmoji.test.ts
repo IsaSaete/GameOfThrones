@@ -7,7 +7,6 @@ describe("Given the getCharacterEmoji function", () => {
       const screen = document.createElement("div");
       const expectedEmoji = "🛡️";
 
-      const character = bradPitt;
       const characterEmoji = getCharacterEmoji(bradPitt.speak());
 
       screen.appendChild(characterEmoji);

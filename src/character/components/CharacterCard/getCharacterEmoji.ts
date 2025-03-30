@@ -1,5 +1,3 @@
-import { Character } from "../../types";
-
 const getCharacterEmoji = (characterPhrase: string): HTMLElement => {
   const emojiElement = document.createElement("span");
   emojiElement.className = "emoji";

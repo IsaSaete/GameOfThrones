@@ -1,4 +1,4 @@
-import getSquire from "./getSquire";
+import getSquire from "./factory/getSquire";
 import { carbassot } from "../fighter/fixtures";
 
 const bradPitt = getSquire(
@@ -7,8 +7,8 @@ const bradPitt = getSquire(
     lastName: "Pitt",
     age: 55,
     portrait: {
-      url: "",
-      description: "",
+      url: "https://bradpitt.com/bradpitt.webp",
+      description: "Brad Pitt looking defeated",
     },
   },
   8,
