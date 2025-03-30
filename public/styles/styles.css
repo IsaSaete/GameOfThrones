@@ -154,3 +154,32 @@ button {
   flex-direction: column;
   gap: 10px;
 }
+
+.modal-background {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: all 2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 3s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.modal {
+  background-color: #b9540c;
+  padding: 20px;
+}
