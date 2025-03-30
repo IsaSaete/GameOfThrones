@@ -11,8 +11,10 @@ describe("Given the getCharacterEmoji function", () => {
 
       screen.appendChild(characterEmoji);
 
-      expect(characterEmoji).not.toBeNull();
-      expect(characterEmoji?.textContent).toBe(expectedEmoji);
+      const emojiElement = screen.querySelector("span");
+
+      expect(emojiElement).not.toBeNull();
+      expect(emojiElement?.textContent).toBe(expectedEmoji);
     });
   });
 });
