@@ -58,7 +58,7 @@ const getCardOverlay = (
   const buttonContainer = document.createElement("div");
   buttonContainer.className = "button-container";
 
-  const killButton = getButton("Die", handleKillCharacter);
+  const killButton = getButton("die", handleKillCharacter);
   const speakButton = getButton("speak", handleSpeakCharacter);
 
   buttonContainer.append(killButton, speakButton);
