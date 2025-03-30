@@ -2,7 +2,10 @@ import { Character } from "../../types";
 import getCharacterCard from "../CharacterCard/getCharacterCard.js";
 import getCardOverlay from "../CharacterCard/getCardOverlay.js";
 
-const getCharacterCardsList = (characters: Character[]): HTMLElement => {
+const getCharacterCardsList = (
+  characters: Character[],
+  handleShowModal: (characterPhrase: string) => void,
+): HTMLElement => {
   const CharacterCardsList = document.createElement("ul");
   CharacterCardsList.classList = "characters";
 
@@ -12,16 +15,15 @@ const getCharacterCardsList = (characters: Character[]): HTMLElement => {
     const handleKillCharacter = () => {
       character.kill();
 
-      const newCharacterCardsList = getCharacterCardsList(characters);
+      const newCharacterCardsList = getCharacterCardsList(
+        characters,
+        handleShowModal,
+      );
       CharacterCardsList.replaceWith(newCharacterCardsList);
     };
 
     const handleSpeakCharacter = () => {
-      /* eslint-disable */
-
-      console.log(character.speak());
-
-      /* eslint-enable */
+      handleShowModal(character.speak());
     };
 
     const handleGetOverlay = () =>

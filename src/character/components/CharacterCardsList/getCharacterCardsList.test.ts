@@ -7,13 +7,17 @@ describe("Given a CharacterCardsList component", () => {
   describe("When it recieves Maria Sarmiento, Paquito Chocolatero y Lebron James", () => {
     test("Then it should show 'Maria Sarmiento','Paquito Chocolatero' and 'Lebron James' inside a heading each", () => {
       const screen = document.createElement("div");
+      const handleShowModal = jest.fn();
       const expectedCharacters = [
         mariaSarmiento,
         paquitoChocolatero,
         lebronJames,
       ];
 
-      const CharacterCardsList = getCharacterCardsList(expectedCharacters);
+      const CharacterCardsList = getCharacterCardsList(
+        expectedCharacters,
+        handleShowModal,
+      );
       screen.appendChild(CharacterCardsList);
 
       const characterNameElements = screen.querySelectorAll("h2");
