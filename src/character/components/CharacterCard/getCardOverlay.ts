@@ -5,7 +5,10 @@ import { King } from "../../../king/types";
 import { Squire } from "../../../squire/types";
 import { Character } from "../../types";
 
-const getCardOverlay = (character: Character): HTMLElement => {
+const getCardOverlay = (
+  character: Character,
+  handleKillCharacter: () => void,
+): HTMLElement => {
   const cardOverlay = document.createElement("div");
   cardOverlay.className = "overlay";
 
@@ -54,10 +57,10 @@ const getCardOverlay = (character: Character): HTMLElement => {
   const buttonContainer = document.createElement("div");
   buttonContainer.className = "button-container";
 
-  const killButton = getButton("Die");
-  const speakButton = getButton("Speak");
+  const killButton = getButton("Die", handleKillCharacter);
+  // const speakButton = getButton(lo que toda)
 
-  buttonContainer.append(killButton, speakButton);
+  buttonContainer.append(killButton); // buttonContainer.append(killButton, speakButton)
   cardOverlay.appendChild(buttonContainer);
 
   return cardOverlay;
