@@ -7,7 +7,7 @@ afterEach(() => {
 });
 
 describe("Given the getStateContainer function", () => {
-  describe("When it receives true", () => {
+  describe("When the character is alive", () => {
     test("Then it should show a thumbs up icon", () => {
       const expectedDescription = "Thumbs up icon";
 
@@ -21,7 +21,7 @@ describe("Given the getStateContainer function", () => {
     });
   });
 
-  describe("When it receives false", () => {
+  describe("When it the character is dead", () => {
     test("Then it should show a thumbs down icon", () => {
       const expectedDescription = "Thumbs down icon";
 
