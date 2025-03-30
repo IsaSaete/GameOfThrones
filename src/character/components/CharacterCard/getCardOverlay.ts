@@ -1,4 +1,5 @@
 import { Adviser } from "../../../adviser/type";
+import getButton from "../../../components/Button/getButton.js";
 import { Fighter } from "../../../fighter/types";
 import { King } from "../../../king/types";
 import { Squire } from "../../../squire/types";
@@ -11,44 +12,55 @@ const getCardOverlay = (character: Character): HTMLElement => {
   if ("yearsOfReign" in character) {
     const kingCharacter = character as King;
 
-    cardOverlay.innerHTML = `<span>Years of reign: ${kingCharacter.yearsOfReign}</span>`;
-
-    return cardOverlay;
+    cardOverlay.innerHTML = `
+    <div class="properties-container">
+      <span>Years of reign: ${kingCharacter.yearsOfReign}</span>
+    </div>
+    `;
   }
 
   if ("weapon" in character) {
     const fighterCharacter = character as Fighter;
 
     cardOverlay.innerHTML = `
-    <span>Weapon: ${fighterCharacter.weapon}</span>
-    <span>Dexterity: ${fighterCharacter.dexterity}</span>
+    <div class="properties-container">
+      <span>Weapon: ${fighterCharacter.weapon}</span>
+      <span>Dexterity: ${fighterCharacter.dexterity}</span>
+    </div>
     `;
-
-    return cardOverlay;
   }
 
   if ("ballism" in character) {
     const squireCharacter = character as Squire;
 
     cardOverlay.innerHTML = `
-    <span>Ballism level: ${squireCharacter.ballism}</span>
-    <span>Serves to: ${squireCharacter.servesTo.name} ${squireCharacter.servesTo.lastName}</span>
+    <div class="properties-container">
+      <span>Ballism level: ${squireCharacter.ballism}</span>
+      <span>Serves to: ${squireCharacter.servesTo.name} ${squireCharacter.servesTo.lastName}</span>
+    </div>
     `;
-
-    return cardOverlay;
   }
 
   if ("advisesTo" in character) {
     const adviserCharacter = character as Adviser;
 
     cardOverlay.innerHTML = `
+    <div class="properties-container">
       <span>Advises to: ${adviserCharacter.advisesTo.name} ${adviserCharacter.advisesTo.lastName}</span>
+    </div>
     `;
-
-    return cardOverlay;
   }
 
-  throw new Error("The character received isn't one of the specified types.");
+  const buttonContainer = document.createElement("div");
+  buttonContainer.className = "button-container";
+
+  const killButton = getButton("Die");
+  const speakButton = getButton("Speak");
+
+  buttonContainer.append(killButton, speakButton);
+  cardOverlay.appendChild(buttonContainer);
+
+  return cardOverlay;
 };
 
 export default getCardOverlay;
