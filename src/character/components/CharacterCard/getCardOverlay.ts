@@ -8,6 +8,7 @@ import { Character } from "../../types";
 const getCardOverlay = (
   character: Character,
   handleKillCharacter: () => void,
+  handleSpeakCharacter: () => void,
 ): HTMLElement => {
   const cardOverlay = document.createElement("div");
   cardOverlay.className = "overlay";
@@ -57,10 +58,10 @@ const getCardOverlay = (
   const buttonContainer = document.createElement("div");
   buttonContainer.className = "button-container";
 
-  const killButton = getButton("Die", handleKillCharacter);
-  // const speakButton = getButton(lo que toda)
+  const killButton = getButton("die", handleKillCharacter);
+  const speakButton = getButton("speak", handleSpeakCharacter);
 
-  buttonContainer.append(killButton); // buttonContainer.append(killButton, speakButton)
+  buttonContainer.append(killButton, speakButton);
   cardOverlay.appendChild(buttonContainer);
 
   return cardOverlay;

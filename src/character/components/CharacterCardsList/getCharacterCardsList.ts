@@ -12,18 +12,20 @@ const getCharacterCardsList = (characters: Character[]): HTMLElement => {
     const handleKillCharacter = () => {
       character.kill();
 
-      const characterPosition = characters.findIndex(
-        (thisCharacter) => thisCharacter.name === character.name,
-      );
-
-      characters.splice(characterPosition, 0);
-
       const newCharacterCardsList = getCharacterCardsList(characters);
       CharacterCardsList.replaceWith(newCharacterCardsList);
     };
 
+    const handleSpeakCharacter = () => {
+      /* eslint-disable */
+
+      console.log(character.speak());
+
+      /* eslint-enable */
+    };
+
     const handleGetOverlay = () =>
-      getCardOverlay(character, handleKillCharacter);
+      getCardOverlay(character, handleKillCharacter, handleSpeakCharacter);
 
     const CharacterCard = getCharacterCard(character, handleGetOverlay);
 
