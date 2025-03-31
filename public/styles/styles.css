@@ -27,6 +27,8 @@ button {
   padding: 0;
   color: inherit;
   font-family: inherit;
+  cursor: pointer;
+  font-size: 1.1rem;
 }
 
 .reverse {
@@ -115,7 +117,7 @@ button {
 }
 
 .overlay {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: #000000b3;
   position: absolute;
   height: 100%;
   width: 100%;
@@ -133,7 +135,6 @@ button {
 }
 
 .emoji {
-  font-size: 1rem;
   text-align: right;
 }
 
@@ -159,7 +160,7 @@ button {
   position: absolute;
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: #000000b3;
   transition: all 2s;
   display: flex;
   justify-content: center;
